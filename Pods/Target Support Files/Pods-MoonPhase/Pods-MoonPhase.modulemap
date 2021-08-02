@@ -1,0 +1,6 @@
+framework module Pods_MoonPhase {
+  umbrella header "Pods-MoonPhase-umbrella.h"
+
+  export *
+  module * { export * }
+}

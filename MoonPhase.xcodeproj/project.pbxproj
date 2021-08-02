@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4F81E0C279B7EA442723DEB /* Pods_MoonPhase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */; };
+		FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */; };
+		FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EC2654D4120062B6F6 /* MoonData.swift */; };
+		FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EE2654D4280062B6F6 /* MoonManager.swift */; };
+		FC5BD15F26900469000D51A7 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BD15E26900469000D51A7 /* AlertViewController.swift */; };
+		FC5BD161269027E4000D51A7 /* ColourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BD160269027E4000D51A7 /* ColourModel.swift */; };
+		FC979E72267310CD00EDB845 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC979E71267310CD00EDB845 /* CalendarViewController.swift */; };
+		FC980B20267AF3E300B158B7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC980B1F267AF3E300B158B7 /* MapViewController.swift */; };
+		FC9C54A526982793001FD91F /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9C54A426982793001FD91F /* ApiKeys.swift */; };
+		FCD902DB26AA86DD00BC378D /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCD902DA26AA86DD00BC378D /* ApiKeys.plist */; };
+		FCDBDE5C265219EB002E74B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBDE5B265219EB002E74B8 /* AppDelegate.swift */; };
+		FCDBDE5E265219EB002E74B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBDE5D265219EB002E74B8 /* SceneDelegate.swift */; };
+		FCDBDE60265219EB002E74B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBDE5F265219EB002E74B8 /* ViewController.swift */; };
+		FCDBDE63265219EB002E74B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDBDE61265219EB002E74B8 /* Main.storyboard */; };
+		FCDBDE65265219EC002E74B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDBDE64265219EC002E74B8 /* Assets.xcassets */; };
+		FCDBDE68265219EC002E74B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDBDE66265219EC002E74B8 /* LaunchScreen.storyboard */; };
+		FCDD2F5026A2569200440A75 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD2F4F26A2569200440A75 /* UserDefaults.swift */; };
+		FCE2BCD0265CE810003309EC /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE2BCCF265CE810003309EC /* MoonPhase.swift */; };
+		FCE4DB1026B77D8800A10AF7 /* GoogleMapsSDKOpenSourceLicense.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FCE4DB0F26B77D8800A10AF7 /* GoogleMapsSDKOpenSourceLicense.rtf */; };
+		FCF7390A266DDE9C00A1BD2B /* PhaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC257D462696BD7D00164507 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonPhase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonPhase.debug.xcconfig"; path = "Target Support Files/Pods-MoonPhase/Pods-MoonPhase.debug.xcconfig"; sourceTree = "<group>"; };
+		F10D711200C752199B9EAF9A /* Pods-MoonPhase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonPhase.release.xcconfig"; path = "Target Support Files/Pods-MoonPhase/Pods-MoonPhase.release.xcconfig"; sourceTree = "<group>"; };
+		FC3599BC26B523390017BF9B /* MoonPhase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoonPhase.entitlements; sourceTree = "<group>"; };
+		FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonModel.swift; sourceTree = "<group>"; };
+		FC5485EC2654D4120062B6F6 /* MoonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonData.swift; sourceTree = "<group>"; };
+		FC5485EE2654D4280062B6F6 /* MoonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonManager.swift; sourceTree = "<group>"; };
+		FC5BD15E26900469000D51A7 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		FC5BD160269027E4000D51A7 /* ColourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourModel.swift; sourceTree = "<group>"; };
+		FC979E71267310CD00EDB845 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		FC980B1F267AF3E300B158B7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FC9C54A426982793001FD91F /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		FCD902DA26AA86DD00BC378D /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
+		FCDBDE58265219EB002E74B8 /* MoonPhase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoonPhase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCDBDE5B265219EB002E74B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCDBDE5D265219EB002E74B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FCDBDE5F265219EB002E74B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCDBDE62265219EB002E74B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCDBDE64265219EC002E74B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCDBDE67265219EC002E74B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCDBDE69265219EC002E74B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCDD2F4F26A2569200440A75 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		FCE2BCCF265CE810003309EC /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
+		FCE4DB0F26B77D8800A10AF7 /* GoogleMapsSDKOpenSourceLicense.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = GoogleMapsSDKOpenSourceLicense.rtf; sourceTree = "<group>"; };
+		FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCDBDE55265219EB002E74B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4F81E0C279B7EA442723DEB /* Pods_MoonPhase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABF584586012A8DE43FE13E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */,
+				F10D711200C752199B9EAF9A /* Pods-MoonPhase.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B294A8DA416DD3C0CCB3598A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCDBDE4F265219EB002E74B8 = {
+			isa = PBXGroup;
+			children = (
+				FCDBDE5A265219EB002E74B8 /* MoonPhase */,
+				FCDBDE59265219EB002E74B8 /* Products */,
+				ABF584586012A8DE43FE13E0 /* Pods */,
+				B294A8DA416DD3C0CCB3598A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FCDBDE59265219EB002E74B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBDE58265219EB002E74B8 /* MoonPhase.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCDBDE5A265219EB002E74B8 /* MoonPhase */ = {
+			isa = PBXGroup;
+			children = (
+				FC3599BC26B523390017BF9B /* MoonPhase.entitlements */,
+				FCDBDE5D265219EB002E74B8 /* SceneDelegate.swift */,
+				FCDBDE5B265219EB002E74B8 /* AppDelegate.swift */,
+				FCDBDE6F26521B82002E74B8 /* Model */,
+				FCDBDE7026521B88002E74B8 /* View */,
+				FCDBDE7126521B8D002E74B8 /* Controller */,
+				FCDBDE64265219EC002E74B8 /* Assets.xcassets */,
+				FCD902DA26AA86DD00BC378D /* ApiKeys.plist */,
+				FCDBDE69265219EC002E74B8 /* Info.plist */,
+				FCE4DB0F26B77D8800A10AF7 /* GoogleMapsSDKOpenSourceLicense.rtf */,
+			);
+			path = MoonPhase;
+			sourceTree = "<group>";
+		};
+		FCDBDE6F26521B82002E74B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC5485EE2654D4280062B6F6 /* MoonManager.swift */,
+				FC5485EC2654D4120062B6F6 /* MoonData.swift */,
+				FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */,
+				FCE2BCCF265CE810003309EC /* MoonPhase.swift */,
+				FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */,
+				FCDD2F4F26A2569200440A75 /* UserDefaults.swift */,
+				FC5BD160269027E4000D51A7 /* ColourModel.swift */,
+				FC9C54A426982793001FD91F /* ApiKeys.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FCDBDE7026521B88002E74B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBDE66265219EC002E74B8 /* LaunchScreen.storyboard */,
+				FCDBDE61265219EB002E74B8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCDBDE7126521B8D002E74B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBDE5F265219EB002E74B8 /* ViewController.swift */,
+				FC979E71267310CD00EDB845 /* CalendarViewController.swift */,
+				FC980B1F267AF3E300B158B7 /* MapViewController.swift */,
+				FC5BD15E26900469000D51A7 /* AlertViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCDBDE57265219EB002E74B8 /* MoonPhase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCDBDE6C265219EC002E74B8 /* Build configuration list for PBXNativeTarget "MoonPhase" */;
+			buildPhases = (
+				0C79AE7AD98FC571BE290432 /* [CP] Check Pods Manifest.lock */,
+				FCDBDE54265219EB002E74B8 /* Sources */,
+				FCDBDE55265219EB002E74B8 /* Frameworks */,
+				FCDBDE56265219EB002E74B8 /* Resources */,
+				FC257D462696BD7D00164507 /* Embed Frameworks */,
+				684273C6150A0DFE8BB6CC74 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoonPhase;
+			productName = "Moon-iOS14";
+			productReference = FCDBDE58265219EB002E74B8 /* MoonPhase.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCDBDE50265219EB002E74B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					FCDBDE57265219EB002E74B8 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = FCDBDE53265219EB002E74B8 /* Build configuration list for PBXProject "MoonPhase" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCDBDE4F265219EB002E74B8;
+			productRefGroup = FCDBDE59265219EB002E74B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCDBDE57265219EB002E74B8 /* MoonPhase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCDBDE56265219EB002E74B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCDBDE68265219EC002E74B8 /* LaunchScreen.storyboard in Resources */,
+				FCD902DB26AA86DD00BC378D /* ApiKeys.plist in Resources */,
+				FCE4DB1026B77D8800A10AF7 /* GoogleMapsSDKOpenSourceLicense.rtf in Resources */,
+				FCDBDE65265219EC002E74B8 /* Assets.xcassets in Resources */,
+				FCDBDE63265219EB002E74B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C79AE7AD98FC571BE290432 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoonPhase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		684273C6150A0DFE8BB6CC74 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoonPhase/Pods-MoonPhase-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoonPhase/Pods-MoonPhase-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoonPhase/Pods-MoonPhase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCDBDE54265219EB002E74B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */,
+				FCE2BCD0265CE810003309EC /* MoonPhase.swift in Sources */,
+				FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */,
+				FC980B20267AF3E300B158B7 /* MapViewController.swift in Sources */,
+				FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */,
+				FCDBDE60265219EB002E74B8 /* ViewController.swift in Sources */,
+				FC5BD161269027E4000D51A7 /* ColourModel.swift in Sources */,
+				FC9C54A526982793001FD91F /* ApiKeys.swift in Sources */,
+				FC5BD15F26900469000D51A7 /* AlertViewController.swift in Sources */,
+				FCF7390A266DDE9C00A1BD2B /* PhaseManager.swift in Sources */,
+				FC979E72267310CD00EDB845 /* CalendarViewController.swift in Sources */,
+				FCDBDE5C265219EB002E74B8 /* AppDelegate.swift in Sources */,
+				FCDD2F5026A2569200440A75 /* UserDefaults.swift in Sources */,
+				FCDBDE5E265219EB002E74B8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FCDBDE61265219EB002E74B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCDBDE62265219EB002E74B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCDBDE66265219EC002E74B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCDBDE67265219EC002E74B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCDBDE6A265219EC002E74B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCDBDE6B265219EC002E74B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCDBDE6D265219EC002E74B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MoonPhase/MoonPhase.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L23P6VGLZ7;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/MoonPhase/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylpark.moonPhase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
+			};
+			name = Debug;
+		};
+		FCDBDE6E265219EC002E74B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F10D711200C752199B9EAF9A /* Pods-MoonPhase.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MoonPhase/MoonPhase.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L23P6VGLZ7;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/MoonPhase/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylpark.moonPhase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCDBDE53265219EB002E74B8 /* Build configuration list for PBXProject "MoonPhase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCDBDE6A265219EC002E74B8 /* Debug */,
+				FCDBDE6B265219EC002E74B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCDBDE6C265219EC002E74B8 /* Build configuration list for PBXNativeTarget "MoonPhase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCDBDE6D265219EC002E74B8 /* Debug */,
+				FCDBDE6E265219EC002E74B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCDBDE50265219EB002E74B8 /* Project object */;
+}
