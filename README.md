@@ -7,3 +7,5 @@ Moon Phase is a minimalist, open-source application that allows you to stay in t
 - Use the Calendar to view phase details for the past or future. 
 - You can allow the app to use your current location or search for a location manually. 
 - Built for the latest iPhone, iPad models, or Mac with macOS 11.0 or later and a Mac with Apple M1 chip. 
+
+https://www.dylpark.com/moon-phase-ios
