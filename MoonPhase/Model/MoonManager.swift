@@ -75,16 +75,6 @@ struct MoonManager {
                 moonIllumination: moon_illumination
             )
             
-            print(moon.cityName)
-            print(moon.region)
-            print(moon.country)
-            print(moon.sunriseTime)
-            print(moon.sunsetTime)
-            print(moon.moonriseTime)
-            print(moon.moonsetTime)
-            print(moon.moonPhase)
-            print(moon.moonIllumination)
-            
             return moon
                       
         } catch {
