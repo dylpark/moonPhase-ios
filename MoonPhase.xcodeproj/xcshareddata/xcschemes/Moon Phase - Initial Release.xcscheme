@@ -73,6 +73,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Moon Phase - Initial Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
