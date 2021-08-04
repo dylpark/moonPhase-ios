@@ -1,3 +1,4 @@
+# Moon Phase
 # MoonPhase-iOS
 
 Moon Phase is a minimalist, open-source application that allows you to stay in touch with the phases of the moon. The perfect app for casual users who are curious about the moon phase on a given day. The app provides you with basic information on the age/phase of the moon as well as moonrise & moonset times, and sunrise & sunset times. 
