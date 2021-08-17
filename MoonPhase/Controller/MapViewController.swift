@@ -8,17 +8,16 @@
 import UIKit
 import MapKit
 import CoreLocation
-import GooglePlaces
-import GoogleMaps
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
-    @IBOutlet weak var googleMapsView: GMSMapView!
+//    @IBOutlet weak var googleMapsView: GMSMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
     let regionInMeters: CLLocationDistance = 10000
     var searchController: UISearchController?
-    var resultsViewController: GMSAutocompleteResultsViewController?
+//    var resultsViewController: GMSAutocompleteResultsViewController?
     var resultView: UITextView?
     var selectedLocation = CLLocationCoordinate2D()
     var droppedPin = MKPointAnnotation()
@@ -28,9 +27,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         configureNavController()
-        configureResultsViewController()
+//        configureResultsViewController()
         configureSearchController()
-        configureGMSMapView()
+//        configureGMSMapView()
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -48,21 +47,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - View Configuration
     
-    func configureGMSMapView() {
-        
-        locationManager.delegate = self
-        guard let location = locationManager.location?.coordinate else { return }
-        
-        var camera = GMSCameraPosition()
-        camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 8.0)
-        
-        googleMapsView.camera = camera
-        googleMapsView.settings.myLocationButton = true
-        googleMapsView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        googleMapsView.isMyLocationEnabled = true
-        googleMapsView.animate(to: camera)
-        
-    }
+//    func configureGMSMapView() {
+//
+//        locationManager.delegate = self
+//        guard let location = locationManager.location?.coordinate else { return }
+//
+//        var camera = GMSCameraPosition()
+//        camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 8.0)
+//
+//        googleMapsView.camera = camera
+//        googleMapsView.settings.myLocationButton = true
+//        googleMapsView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        googleMapsView.isMyLocationEnabled = true
+//        googleMapsView.animate(to: camera)
+//
+//    }
     
     //MARK: - View Configuration
     
@@ -73,20 +72,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         navigationController?.storyboard?.instantiateViewController(withIdentifier: "navigationController")
     }
     
-    func configureResultsViewController() {
-        resultsViewController = GMSAutocompleteResultsViewController()
-        resultsViewController?.delegate = self
-        resultsViewController?.tableCellBackgroundColor = UIColor(named: "Background Blue") ?? .systemBackground
-        resultsViewController?.primaryTextColor = .lightGray
-        resultsViewController?.primaryTextHighlightColor = .white
-        resultsViewController?.secondaryTextColor = .white
-        resultsViewController?.tableCellSeparatorColor = .lightGray
-    }
+//    func configureResultsViewController() {
+//        resultsViewController = GMSAutocompleteResultsViewController()
+//        resultsViewController?.delegate = self
+//        resultsViewController?.tableCellBackgroundColor = UIColor(named: "Background Blue") ?? .systemBackground
+//        resultsViewController?.primaryTextColor = .lightGray
+//        resultsViewController?.primaryTextHighlightColor = .white
+//        resultsViewController?.secondaryTextColor = .white
+//        resultsViewController?.tableCellSeparatorColor = .lightGray
+//    }
     
     func configureSearchController() {
-        searchController = UISearchController(searchResultsController: resultsViewController)
-        searchController?.searchResultsUpdater = resultsViewController
-        searchController?.searchBar.delegate = self
+//        searchController = UISearchController(searchResultsController: resultsViewController)
+//        searchController?.searchResultsUpdater = resultsViewController
+//        searchController?.searchBar.delegate = self
         searchController?.searchBar.barStyle = .black
         searchController?.searchBar.tintColor = .white
         searchController?.searchBar.searchTextField.textColor = .white
@@ -123,102 +122,102 @@ extension UISearchBar {
 
 //MARK: - GMSAutocomplete
 
-extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
-    
-    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-                           didAutocompleteWith place: GMSPlace) {
-        
-        googleMapsView.clear()
-        
-        searchController?.isActive = false
-        searchController?.resignFirstResponder()
-        searchController?.dismiss(animated: true, completion: nil)
-        
-        selectedLocation = place.coordinate
-        
-        let position = selectedLocation
-        let marker = GMSMarker(position: position)
-        marker.title = place.name
-        marker.map = googleMapsView
-        marker.position = CLLocationCoordinate2D(latitude: selectedLocation.latitude, longitude: selectedLocation.longitude)
-        
-        let camera = GMSCameraPosition.camera(withLatitude: selectedLocation.latitude, longitude: selectedLocation.longitude, zoom: 8.0)
-        
-        if place.formattedAddress != nil {
-            self.selectedLocationLabel = place.name!
-        }
-        
-        googleMapsView.camera = camera
-        googleMapsView.animate(to: camera)
-        
-        UserDefaults.standard.set(location: selectedLocation)
-        UserDefaults.standard.setLabel(label: selectedLocationLabel)
-        
-    }
-    
-    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-                           didFailAutocompleteWithError error: Error){
-        print("lookup place id query error: \(error.localizedDescription)")
-    }
-    
-}
+//extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
+//
+//    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+//                           didAutocompleteWith place: GMSPlace) {
+//
+//        googleMapsView.clear()
+//
+//        searchController?.isActive = false
+//        searchController?.resignFirstResponder()
+//        searchController?.dismiss(animated: true, completion: nil)
+//
+//        selectedLocation = place.coordinate
+//
+//        let position = selectedLocation
+//        let marker = GMSMarker(position: position)
+//        marker.title = place.name
+//        marker.map = googleMapsView
+//        marker.position = CLLocationCoordinate2D(latitude: selectedLocation.latitude, longitude: selectedLocation.longitude)
+//
+//        let camera = GMSCameraPosition.camera(withLatitude: selectedLocation.latitude, longitude: selectedLocation.longitude, zoom: 8.0)
+//
+//        if place.formattedAddress != nil {
+//            self.selectedLocationLabel = place.name!
+//        }
+//
+//        googleMapsView.camera = camera
+//        googleMapsView.animate(to: camera)
+//
+//        UserDefaults.standard.set(location: selectedLocation)
+//        UserDefaults.standard.setLabel(label: selectedLocationLabel)
+//
+//    }
+//
+//    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+//                           didFailAutocompleteWithError error: Error){
+//        print("lookup place id query error: \(error.localizedDescription)")
+//    }
+//
+//}
 
 //MARK: - UISearchBarDelegate
 
-extension MapViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        googleMapsView.clear()
-        
-        let client = GMSPlacesClient()
-        
-        guard let query = searchBar.text else { return }
-        
-        let filter = GMSAutocompleteFilter()
-        filter.type = .geocode
-        client.findAutocompletePredictions(fromQuery: query, filter: filter, sessionToken: nil) { results, error in
-            
-            guard let searchResult = results, error == nil else {
-                return
-            }
-            
-            let searchedPlaceID = searchResult[0].placeID
-            
-            client.lookUpPlaceID(searchedPlaceID) { place, error in
-                if let error = error {
-                    print("lookup place id query error: \(error.localizedDescription)")
-                    return
-                }
-                
-                guard let place = place else {
-                    print("No place details for \(searchedPlaceID)")
-                    return
-                }
-                
-                self.searchController?.resignFirstResponder()
-                self.searchController?.dismiss(animated: true, completion: nil)
-                self.selectedLocation = place.coordinate
-                
-                let position = self.selectedLocation
-                let marker = GMSMarker(position: position)
-                marker.title = place.name
-                marker.map = self.googleMapsView
-                marker.position = CLLocationCoordinate2D(latitude: self.selectedLocation.latitude, longitude: self.selectedLocation.longitude)
-                
-                let camera = GMSCameraPosition.camera(withLatitude: self.selectedLocation.latitude, longitude: self.selectedLocation.longitude, zoom: 8.0)
-                
-                if place.formattedAddress != nil {
-                    self.selectedLocationLabel = place.name!
-                }
-                
-                self.googleMapsView.camera = camera
-                self.googleMapsView.animate(to: camera)
-                
-                UserDefaults.standard.set(location: self.selectedLocation)
-                UserDefaults.standard.setLabel(label: self.selectedLocationLabel)
-            }
-        }
-    }
-    
-}
+//extension MapViewController: UISearchBarDelegate {
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//
+//        googleMapsView.clear()
+//
+//        let client = GMSPlacesClient()
+//
+//        guard let query = searchBar.text else { return }
+//
+//        let filter = GMSAutocompleteFilter()
+//        filter.type = .geocode
+//        client.findAutocompletePredictions(fromQuery: query, filter: filter, sessionToken: nil) { results, error in
+//
+//            guard let searchResult = results, error == nil else {
+//                return
+//            }
+//
+//            let searchedPlaceID = searchResult[0].placeID
+//
+//            client.lookUpPlaceID(searchedPlaceID) { place, error in
+//                if let error = error {
+//                    print("lookup place id query error: \(error.localizedDescription)")
+//                    return
+//                }
+//
+//                guard let place = place else {
+//                    print("No place details for \(searchedPlaceID)")
+//                    return
+//                }
+//
+//                self.searchController?.resignFirstResponder()
+//                self.searchController?.dismiss(animated: true, completion: nil)
+//                self.selectedLocation = place.coordinate
+//
+//                let position = self.selectedLocation
+//                let marker = GMSMarker(position: position)
+//                marker.title = place.name
+//                marker.map = self.googleMapsView
+//                marker.position = CLLocationCoordinate2D(latitude: self.selectedLocation.latitude, longitude: self.selectedLocation.longitude)
+//
+//                let camera = GMSCameraPosition.camera(withLatitude: self.selectedLocation.latitude, longitude: self.selectedLocation.longitude, zoom: 8.0)
+//
+//                if place.formattedAddress != nil {
+//                    self.selectedLocationLabel = place.name!
+//                }
+//
+//                self.googleMapsView.camera = camera
+//                self.googleMapsView.animate(to: camera)
+//
+//                UserDefaults.standard.set(location: self.selectedLocation)
+//                UserDefaults.standard.setLabel(label: self.selectedLocationLabel)
+//            }
+//        }
+//    }
+//
+//}

@@ -18,18 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="dz6-pL-vAP" customClass="GMSMapView">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-0p-bqt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ee9-N3-4GY"/>
                         <color key="backgroundColor" name="Background Blue"/>
                         <constraints>
-                            <constraint firstItem="dz6-pL-vAP" firstAttribute="trailing" secondItem="Ee9-N3-4GY" secondAttribute="trailing" id="4d5-XL-lio"/>
-                            <constraint firstItem="dz6-pL-vAP" firstAttribute="top" secondItem="Ee9-N3-4GY" secondAttribute="top" id="DCb-9i-ach"/>
-                            <constraint firstItem="dz6-pL-vAP" firstAttribute="bottom" secondItem="C9a-KI-hHq" secondAttribute="bottom" id="e1z-U3-IoK"/>
-                            <constraint firstItem="dz6-pL-vAP" firstAttribute="leading" secondItem="Ee9-N3-4GY" secondAttribute="leading" id="ngj-Vh-GXc"/>
+                            <constraint firstAttribute="bottom" secondItem="WgM-0p-bqt" secondAttribute="bottom" id="7yc-MX-1sF"/>
+                            <constraint firstItem="Ee9-N3-4GY" firstAttribute="trailing" secondItem="WgM-0p-bqt" secondAttribute="trailing" id="9J4-eX-JNI"/>
+                            <constraint firstItem="WgM-0p-bqt" firstAttribute="leading" secondItem="Ee9-N3-4GY" secondAttribute="leading" id="Iuo-zM-Whl"/>
+                            <constraint firstItem="WgM-0p-bqt" firstAttribute="top" secondItem="Ee9-N3-4GY" secondAttribute="top" id="h3z-vf-8jf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vrq-xE-U5Y">
@@ -47,7 +46,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="googleMapsView" destination="dz6-pL-vAP" id="GKW-z3-mme"/>
+                        <outlet property="mapView" destination="WgM-0p-bqt" id="1gI-gL-C7F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6K-EB-y3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -6,15 +6,11 @@
 //  Copyright © 2021 Dylan Park. All rights reserved.
 
 import UIKit
-import GooglePlaces
-import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSPlacesClient.provideAPIKey(apiKeys.placesApiKey)
-        GMSServices.provideAPIKey(apiKeys.mapsApiKey)
         return true
     }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC11941B26B8C8B10091AB19 /* Pods_MoonPhase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */; };
 		FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */; };
 		FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EC2654D4120062B6F6 /* MoonData.swift */; };
 		FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EE2654D4280062B6F6 /* MoonManager.swift */; };
@@ -25,13 +24,9 @@
 		FCDD2F5026A2569200440A75 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD2F4F26A2569200440A75 /* UserDefaults.swift */; };
 		FCE2BCD0265CE810003309EC /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE2BCCF265CE810003309EC /* MoonPhase.swift */; };
 		FCF7390A266DDE9C00A1BD2B /* PhaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */; };
-		FCFC76CD26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC76CC26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonPhase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonPhase.debug.xcconfig"; path = "Target Support Files/Pods-MoonPhase/Pods-MoonPhase.debug.xcconfig"; sourceTree = "<group>"; };
-		F10D711200C752199B9EAF9A /* Pods-MoonPhase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonPhase.release.xcconfig"; path = "Target Support Files/Pods-MoonPhase/Pods-MoonPhase.release.xcconfig"; sourceTree = "<group>"; };
 		FC3599BC26B523390017BF9B /* MoonPhase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoonPhase.entitlements; sourceTree = "<group>"; };
 		FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonModel.swift; sourceTree = "<group>"; };
 		FC5485EC2654D4120062B6F6 /* MoonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonData.swift; sourceTree = "<group>"; };
@@ -52,7 +47,6 @@
 		FCDD2F4F26A2569200440A75 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FCE2BCCF265CE810003309EC /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
 		FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseManager.swift; sourceTree = "<group>"; };
-		FCFC76CC26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsSDKOpenSourceLicenseInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,37 +54,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC11941B26B8C8B10091AB19 /* Pods_MoonPhase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ABF584586012A8DE43FE13E0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */,
-				F10D711200C752199B9EAF9A /* Pods-MoonPhase.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		B294A8DA416DD3C0CCB3598A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FCDBDE4F265219EB002E74B8 = {
 			isa = PBXGroup;
 			children = (
 				FCDBDE5A265219EB002E74B8 /* MoonPhase */,
 				FCDBDE59265219EB002E74B8 /* Products */,
-				ABF584586012A8DE43FE13E0 /* Pods */,
-				B294A8DA416DD3C0CCB3598A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,7 +88,6 @@
 				FCDBDE64265219EC002E74B8 /* Assets.xcassets */,
 				FCD902DA26AA86DD00BC378D /* ApiKeys.plist */,
 				FCDBDE69265219EC002E74B8 /* Info.plist */,
-				FCFC76CC26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift */,
 			);
 			path = MoonPhase;
 			sourceTree = "<group>";
@@ -160,11 +133,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCDBDE6C265219EC002E74B8 /* Build configuration list for PBXNativeTarget "MoonPhase" */;
 			buildPhases = (
-				0C79AE7AD98FC571BE290432 /* [CP] Check Pods Manifest.lock */,
 				FCDBDE54265219EB002E74B8 /* Sources */,
 				FCDBDE55265219EB002E74B8 /* Frameworks */,
 				FCDBDE56265219EB002E74B8 /* Resources */,
-				684273C6150A0DFE8BB6CC74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,48 +191,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0C79AE7AD98FC571BE290432 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MoonPhase-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		684273C6150A0DFE8BB6CC74 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoonPhase/Pods-MoonPhase-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoonPhase/Pods-MoonPhase-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoonPhase/Pods-MoonPhase-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		FCDBDE54265219EB002E74B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -277,7 +206,6 @@
 				FC9C54A526982793001FD91F /* ApiKeys.swift in Sources */,
 				FC5BD15F26900469000D51A7 /* AlertViewController.swift in Sources */,
 				FCF7390A266DDE9C00A1BD2B /* PhaseManager.swift in Sources */,
-				FCFC76CD26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift in Sources */,
 				FC979E72267310CD00EDB845 /* CalendarViewController.swift in Sources */,
 				FCDBDE5C265219EB002E74B8 /* AppDelegate.swift in Sources */,
 				FCDD2F5026A2569200440A75 /* UserDefaults.swift in Sources */,
@@ -417,7 +345,6 @@
 		};
 		FCDBDE6D265219EC002E74B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -448,7 +375,6 @@
 		};
 		FCDBDE6E265219EC002E74B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F10D711200C752199B9EAF9A /* Pods-MoonPhase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
