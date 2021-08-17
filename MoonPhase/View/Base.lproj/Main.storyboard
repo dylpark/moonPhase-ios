@@ -18,8 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-0p-bqt">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-0p-bqt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ee9-N3-4GY"/>
@@ -52,6 +53,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6K-EB-y3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2705" y="480"/>
+        </scene>
+        <!--Completion Table View Controller-->
+        <scene sceneID="udh-EQ-uZO">
+            <objects>
+                <tableViewController storyboardIdentifier="completionTableView" id="dIx-kS-0uT" customClass="CompletionTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uJT-LL-Egj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" name="Background Blue"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="completionCell" id="oCs-Fv-iO7">
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oCs-Fv-iO7" id="e7F-gp-ueh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dIx-kS-0uT" id="xiP-t7-BWu"/>
+                            <outlet property="delegate" destination="dIx-kS-0uT" id="MOr-5e-qik"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="completionTableView" destination="uJT-LL-Egj" id="M6l-TX-3z9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0z-Dq-vPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3463" y="479"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

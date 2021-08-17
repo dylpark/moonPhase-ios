@@ -40,6 +40,7 @@ class AlertViewController: UIViewController {
 
     }
     
+    
     //MARK: - Alert
     
     func checkLocationAutorisationWithAlert() {

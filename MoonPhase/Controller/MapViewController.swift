@@ -9,32 +9,29 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchControllerDelegate, UISearchBarDelegate {
     
-//    @IBOutlet weak var googleMapsView: GMSMapView!
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
     let regionInMeters: CLLocationDistance = 10000
-    var searchController: UISearchController?
-//    var resultsViewController: GMSAutocompleteResultsViewController?
-    var resultView: UITextView?
+    var searchController: UISearchController? = nil
     var selectedLocation = CLLocationCoordinate2D()
     var droppedPin = MKPointAnnotation()
     var selectedLocationLabel = String()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureNavController()
-//        configureResultsViewController()
-        configureSearchController()
-//        configureGMSMapView()
+        mapView.delegate = self
         
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        locationManager.startUpdatingLocation()
+        configureLocationManager()
+        centreViewOnUserLocation()
+        
+        configureCompletionTableView()
+        configureNavController()
+        configureSearchController()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,23 +42,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    //MARK: - View Configuration
-    
-//    func configureGMSMapView() {
-//
-//        locationManager.delegate = self
-//        guard let location = locationManager.location?.coordinate else { return }
-//
-//        var camera = GMSCameraPosition()
-//        camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 8.0)
-//
-//        googleMapsView.camera = camera
-//        googleMapsView.settings.myLocationButton = true
-//        googleMapsView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        googleMapsView.isMyLocationEnabled = true
-//        googleMapsView.animate(to: camera)
-//
-//    }
     
     //MARK: - View Configuration
     
@@ -72,42 +52,44 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         navigationController?.storyboard?.instantiateViewController(withIdentifier: "navigationController")
     }
     
-//    func configureResultsViewController() {
-//        resultsViewController = GMSAutocompleteResultsViewController()
-//        resultsViewController?.delegate = self
-//        resultsViewController?.tableCellBackgroundColor = UIColor(named: "Background Blue") ?? .systemBackground
-//        resultsViewController?.primaryTextColor = .lightGray
-//        resultsViewController?.primaryTextHighlightColor = .white
-//        resultsViewController?.secondaryTextColor = .white
-//        resultsViewController?.tableCellSeparatorColor = .lightGray
-//    }
+    func configureCompletionTableView() {
+        let completionTableView = storyboard!.instantiateViewController(identifier: "completionTableView") as? CompletionTableViewController
+        
+        completionTableView?.mapView = mapView
+        completionTableView?.handleMapSearchDelegate = self
+        
+        searchController = UISearchController(searchResultsController: completionTableView)
+        searchController?.searchResultsUpdater = completionTableView as? UISearchResultsUpdating
+    }
     
     func configureSearchController() {
-//        searchController = UISearchController(searchResultsController: resultsViewController)
-//        searchController?.searchResultsUpdater = resultsViewController
-//        searchController?.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        searchController?.delegate = self
+        searchController?.searchBar.delegate = self
+        definesPresentationContext = true
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = false
+        
         searchController?.searchBar.barStyle = .black
         searchController?.searchBar.tintColor = .white
         searchController?.searchBar.searchTextField.textColor = .white
         searchController?.searchBar.backgroundColor = UIColor(named: "Background Blue")
         searchController?.searchBar.searchTextField.backgroundColor = UIColor(named: "Cod Grey")
-        searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor : UIColor(named: "Super Light Grey")!])
         searchController?.searchBar.setSearchBarIconColorTo(color: UIColor(named: "Light Grey")!)
-        searchController?.hidesNavigationBarDuringPresentation = false
-        searchController?.searchBar.sizeToFit()
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+        searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "Super Light Grey")!])
     }
     
-    func setSearchIconColorTo(color: UIColor)
-        {
-            let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
-            let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
-            glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
-            glassIconView?.tintColor = color
-        }
+    func setSearchIconColorTo(color: UIColor) {
+        let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
+        let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
+        glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
+        glassIconView?.tintColor = color
+    }
     
 }
+
+
+//MARK: - UISearchBar Extension
 
 extension UISearchBar {
     
@@ -119,6 +101,66 @@ extension UISearchBar {
     }
     
 }
+
+
+//MARK: - CLLocationManagerDelegate
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        locationManager.stopUpdatingLocation()
+        let centre = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion.init(center: centre, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func configureLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func centreViewOnUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+}
+
+
+//MARK: - HandleMapSearch Protocol
+
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark: MKPlacemark)
+}
+
+extension MapViewController: HandleMapSearch {
+    
+    func dropPinZoomIn(placemark: MKPlacemark) {
+
+//        selectedPin = placemark
+        
+        mapView.removeAnnotations(mapView.annotations)
+        
+        let userSelectedLocation = MKPointAnnotation()
+        userSelectedLocation.coordinate = placemark.coordinate
+        
+        if let city = placemark.locality,
+           let state = placemark.administrativeArea,
+           let country = placemark.country {
+            userSelectedLocation.subtitle = "\(city) \(state), \(country)"
+        }
+        mapView.addAnnotation(userSelectedLocation)
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
+        self.mapView.setRegion(region, animated: true)
+    }
+    
+}
+
 
 //MARK: - GMSAutocomplete
 
@@ -161,6 +203,7 @@ extension UISearchBar {
 //    }
 //
 //}
+
 
 //MARK: - UISearchBarDelegate
 

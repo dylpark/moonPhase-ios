@@ -15,6 +15,7 @@
 		FC979E72267310CD00EDB845 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC979E71267310CD00EDB845 /* CalendarViewController.swift */; };
 		FC980B20267AF3E300B158B7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC980B1F267AF3E300B158B7 /* MapViewController.swift */; };
 		FC9C54A526982793001FD91F /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9C54A426982793001FD91F /* ApiKeys.swift */; };
+		FCBFF72226CB825000C209B2 /* CompletionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBFF72126CB825000C209B2 /* CompletionTableViewController.swift */; };
 		FCD902DB26AA86DD00BC378D /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCD902DA26AA86DD00BC378D /* ApiKeys.plist */; };
 		FCDBDE5C265219EB002E74B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBDE5B265219EB002E74B8 /* AppDelegate.swift */; };
 		FCDBDE5E265219EB002E74B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBDE5D265219EB002E74B8 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		FC979E71267310CD00EDB845 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FC980B1F267AF3E300B158B7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FC9C54A426982793001FD91F /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		FCBFF72126CB825000C209B2 /* CompletionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionTableViewController.swift; sourceTree = "<group>"; };
 		FCD902DA26AA86DD00BC378D /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		FCDBDE58265219EB002E74B8 /* MoonPhase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoonPhase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDBDE5B265219EB002E74B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				FC979E71267310CD00EDB845 /* CalendarViewController.swift */,
 				FC980B1F267AF3E300B158B7 /* MapViewController.swift */,
 				FC5BD15E26900469000D51A7 /* AlertViewController.swift */,
+				FCBFF72126CB825000C209B2 /* CompletionTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */,
 				FCE2BCD0265CE810003309EC /* MoonPhase.swift in Sources */,
 				FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */,
+				FCBFF72226CB825000C209B2 /* CompletionTableViewController.swift in Sources */,
 				FC980B20267AF3E300B158B7 /* MapViewController.swift in Sources */,
 				FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */,
 				FCDBDE60265219EB002E74B8 /* ViewController.swift in Sources */,
