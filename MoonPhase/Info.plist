@@ -32,7 +32,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Would you like to use your current location for rise/set times? Alternatively, you can set a location manually.</string>
+	<string>Would you like Moon Phase to use your current location? If not, you can search for a location manually.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

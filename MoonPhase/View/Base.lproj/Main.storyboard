@@ -481,7 +481,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iqt-sC-GjD" userLabel="Text Stack View">
                                         <rect key="frame" x="17.333333333333343" y="110.00000000000003" width="215" height="90"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="You can choose which location you would like to use for the app to calculate it's information." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhd-iW-wPm">
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Would you like Moon Phase to use your current location? If not, you can search for a location manually." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhd-iW-wPm">
                                                 <rect key="frame" x="0.0" y="0.0" width="215" height="90"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -599,7 +599,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sxF-kt-k91"/>
+        <segue reference="q7A-kO-a0X"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Moonrise" width="118" height="118"/>
