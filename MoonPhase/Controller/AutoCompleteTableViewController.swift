@@ -19,6 +19,16 @@ class AutoCompleteTableViewController: UITableViewController, MKLocalSearchCompl
     var searchCompleter = MKLocalSearchCompleter()
     var searchResults = [MKLocalSearchCompletion]()
     
+    enum Colours {
+        static let lightGreyA50 = "Light Grey-A50"
+        static let whiteA50 = "White-A50"
+        static let whiteA75 = "White-A75"
+    }
+    
+    enum Identifiers {
+        static let autoCompleteCell = "autoCompleteCell"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,28 +65,8 @@ extension AutoCompleteTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         
         guard let searchBarText = searchController.searchBar.text else { return }
-        
         searchCompleter.queryFragment = searchBarText
-        
-        //        let request = MKLocalSearch.Request()
-        
-        //        request.naturalLanguageQuery = searchBarText
-        //        request.resultTypes = .address
-        //        request.region = MKCoordinateRegion(.world)
-        //
-        //        let search = MKLocalSearch(request: request)
-        //
-        //        search.start { response, error in
-        //            guard let response = response else { return }
-        //
-        //            self.mapItems = response.mapItems
-        //            self.autoCompleteTableView.reloadData()
-        //        }
     }
-    
-    //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //        searchCompleter.queryFragment = searchText
-    //    }
     
 }
 
@@ -96,17 +86,12 @@ extension AutoCompleteTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let searchResults = searchResults[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "autoCompleteCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.autoCompleteCell)
         
         cell?.textLabel?.text = searchResults.title
         cell?.detailTextLabel?.text = searchResults.subtitle
-        
-        //        if let city = mapItems[indexPath.row].placemark.locality,
-        //           let state = mapItems[indexPath.row].placemark.administrativeArea,
-        //           let country = mapItems[indexPath.row].placemark.country
-        //        {
-        //            cell?.textLabel?.text = "\(city), \(country)"
-        //        }
+        cell?.textLabel?.textColor = .white
+        cell?.detailTextLabel?.textColor = UIColor(named: Colours.whiteA75)
         
         return cell!
     }
@@ -130,7 +115,6 @@ extension AutoCompleteTableViewController {
             guard let selectedItem = response?.mapItems[0].placemark else {
                 return
             }
-            //            let selectedItem = self.mapItems[indexPath.row].placemark
             self.completeMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
         }
         
