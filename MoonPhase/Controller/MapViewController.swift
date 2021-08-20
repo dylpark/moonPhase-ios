@@ -1,41 +1,48 @@
 //
 //  MapViewController.swift
-//  MoonPhase
+//  Moon-iOS14
 //
-//  Created by Dylan Park on 23/7/21.
-//  Copyright © 2021 Dylan Park. All rights reserved.
-
+//  Created by Dylan Park on 17/6/21.
+//
 import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate, UISearchControllerDelegate, UISearchBarDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
     let regionInMeters: CLLocationDistance = 10000
     var searchController: UISearchController? = nil
+    //    var resultsViewController: GMSAutocompleteResultsViewController?
+    //    var resultView: UITextView?
     var selectedLocation = CLLocationCoordinate2D()
     var droppedPin = MKPointAnnotation()
     var selectedLocationLabel = String()
     
+    var selectedPin: MKPlacemark? = nil
+    var userSelectedLocation: MKPointAnnotation?
+    var mapItems: [MKMapItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.delegate = self
         
-        configureLocationManager()
         centreViewOnUserLocation()
-        
-        configureCompletionTableView()
         configureNavController()
+        configureSearchResultsTable()
         configureSearchController()
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         if segue.identifier == "cancel" {
             UserDefaults.standard.set(location: nil)
             UserDefaults.standard.setLabel(label: nil)
@@ -45,6 +52,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchController
     
     //MARK: - View Configuration
     
+    func configureSearchResultsTable() {
+        let autoCompleteTable = storyboard!.instantiateViewController(withIdentifier: "autoCompleteTableView")
+            as! AutoCompleteTableViewController
+        
+        autoCompleteTable.mapView = mapView
+        autoCompleteTable.completeMapSearchDelegate = self
+        
+        searchController = UISearchController(searchResultsController: autoCompleteTable)
+        searchController?.searchResultsUpdater = autoCompleteTable as UISearchResultsUpdating
+    }
+    
     func configureNavController() {
         title = "Location Search"
         navigationController?.view.isHidden = false
@@ -52,31 +70,19 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchController
         navigationController?.storyboard?.instantiateViewController(withIdentifier: "navigationController")
     }
     
-    func configureCompletionTableView() {
-        let completionTableView = storyboard!.instantiateViewController(identifier: "completionTableView") as? CompletionTableViewController
-        
-        completionTableView?.mapView = mapView
-        completionTableView?.handleMapSearchDelegate = self
-        
-        searchController = UISearchController(searchResultsController: completionTableView)
-        searchController?.searchResultsUpdater = completionTableView as? UISearchResultsUpdating
-    }
-    
     func configureSearchController() {
-        navigationItem.searchController = searchController
-        searchController?.delegate = self
         searchController?.searchBar.delegate = self
-        definesPresentationContext = true
-        searchController?.searchBar.sizeToFit()
-        searchController?.hidesNavigationBarDuringPresentation = false
-        
         searchController?.searchBar.barStyle = .black
         searchController?.searchBar.tintColor = .white
         searchController?.searchBar.searchTextField.textColor = .white
         searchController?.searchBar.backgroundColor = UIColor(named: "Background Blue")
         searchController?.searchBar.searchTextField.backgroundColor = UIColor(named: "Cod Grey")
+        searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor : UIColor(named: "Super Light Grey")!])
         searchController?.searchBar.setSearchBarIconColorTo(color: UIColor(named: "Light Grey")!)
-        searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "Super Light Grey")!])
+        searchController?.hidesNavigationBarDuringPresentation = false
+        searchController?.searchBar.sizeToFit()
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     func setSearchIconColorTo(color: UIColor) {
@@ -87,9 +93,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchController
     }
     
 }
-
-
-//MARK: - UISearchBar Extension
 
 extension UISearchBar {
     
@@ -103,27 +106,28 @@ extension UISearchBar {
 }
 
 
-//MARK: - CLLocationManagerDelegate
+// MARK: - UISearchBarDelegate functions
 
-extension MapViewController: CLLocationManagerDelegate {
+extension MapViewController: UISearchBarDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        locationManager.stopUpdatingLocation()
-        let centre = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion.init(center: centre, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-        mapView.setRegion(region, animated: true)
-    }
-    
-    func configureLocationManager() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    }
-    
-    func centreViewOnUserLocation() {
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-            mapView.setRegion(region, animated: true)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        let request = MKLocalSearch.Request()
+        
+        request.naturalLanguageQuery = searchBar.text
+        request.resultTypes = .address
+        
+        let activeSearch = MKLocalSearch(request: request)
+        
+        activeSearch.start { response, error in
+            guard let response = response else { return }
+            
+            self.mapItems = response.mapItems
+            
+            let selectedItem = self.mapItems[0].placemark
+            self.dropPinZoomIn(placemark: selectedItem)
+            
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -132,18 +136,20 @@ extension MapViewController: CLLocationManagerDelegate {
 
 //MARK: - HandleMapSearch Protocol
 
-protocol HandleMapSearch {
+protocol CompleteMapSearch {
     func dropPinZoomIn(placemark: MKPlacemark)
 }
 
-extension MapViewController: HandleMapSearch {
+extension MapViewController: CompleteMapSearch {
     
     func dropPinZoomIn(placemark: MKPlacemark) {
-
-//        selectedPin = placemark
+        // Cache the Pin
+        selectedPin = placemark
         
+        // Clear Existing Pins
         mapView.removeAnnotations(mapView.annotations)
         
+        // Getting Data & Creating Pin
         let userSelectedLocation = MKPointAnnotation()
         userSelectedLocation.coordinate = placemark.coordinate
         
@@ -162,105 +168,19 @@ extension MapViewController: HandleMapSearch {
 }
 
 
-//MARK: - GMSAutocomplete
+//MARK: - CLLocationManagerDelegate
 
-//extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
-//
-//    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-//                           didAutocompleteWith place: GMSPlace) {
-//
-//        googleMapsView.clear()
-//
-//        searchController?.isActive = false
-//        searchController?.resignFirstResponder()
-//        searchController?.dismiss(animated: true, completion: nil)
-//
-//        selectedLocation = place.coordinate
-//
-//        let position = selectedLocation
-//        let marker = GMSMarker(position: position)
-//        marker.title = place.name
-//        marker.map = googleMapsView
-//        marker.position = CLLocationCoordinate2D(latitude: selectedLocation.latitude, longitude: selectedLocation.longitude)
-//
-//        let camera = GMSCameraPosition.camera(withLatitude: selectedLocation.latitude, longitude: selectedLocation.longitude, zoom: 8.0)
-//
-//        if place.formattedAddress != nil {
-//            self.selectedLocationLabel = place.name!
-//        }
-//
-//        googleMapsView.camera = camera
-//        googleMapsView.animate(to: camera)
-//
-//        UserDefaults.standard.set(location: selectedLocation)
-//        UserDefaults.standard.setLabel(label: selectedLocationLabel)
-//
-//    }
-//
-//    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-//                           didFailAutocompleteWithError error: Error){
-//        print("lookup place id query error: \(error.localizedDescription)")
-//    }
-//
-//}
-
-
-//MARK: - UISearchBarDelegate
-
-//extension MapViewController: UISearchBarDelegate {
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//
-//        googleMapsView.clear()
-//
-//        let client = GMSPlacesClient()
-//
-//        guard let query = searchBar.text else { return }
-//
-//        let filter = GMSAutocompleteFilter()
-//        filter.type = .geocode
-//        client.findAutocompletePredictions(fromQuery: query, filter: filter, sessionToken: nil) { results, error in
-//
-//            guard let searchResult = results, error == nil else {
-//                return
-//            }
-//
-//            let searchedPlaceID = searchResult[0].placeID
-//
-//            client.lookUpPlaceID(searchedPlaceID) { place, error in
-//                if let error = error {
-//                    print("lookup place id query error: \(error.localizedDescription)")
-//                    return
-//                }
-//
-//                guard let place = place else {
-//                    print("No place details for \(searchedPlaceID)")
-//                    return
-//                }
-//
-//                self.searchController?.resignFirstResponder()
-//                self.searchController?.dismiss(animated: true, completion: nil)
-//                self.selectedLocation = place.coordinate
-//
-//                let position = self.selectedLocation
-//                let marker = GMSMarker(position: position)
-//                marker.title = place.name
-//                marker.map = self.googleMapsView
-//                marker.position = CLLocationCoordinate2D(latitude: self.selectedLocation.latitude, longitude: self.selectedLocation.longitude)
-//
-//                let camera = GMSCameraPosition.camera(withLatitude: self.selectedLocation.latitude, longitude: self.selectedLocation.longitude, zoom: 8.0)
-//
-//                if place.formattedAddress != nil {
-//                    self.selectedLocationLabel = place.name!
-//                }
-//
-//                self.googleMapsView.camera = camera
-//                self.googleMapsView.animate(to: camera)
-//
-//                UserDefaults.standard.set(location: self.selectedLocation)
-//                UserDefaults.standard.setLabel(label: self.selectedLocationLabel)
-//            }
-//        }
-//    }
-//
-//}
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func centreViewOnUserLocation() {
+        
+        locationManager.delegate = self
+        
+        guard let location = locationManager.location?.coordinate else { return }
+        
+        let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
+        
+    }
+    
+}

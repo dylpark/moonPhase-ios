@@ -54,37 +54,36 @@
             </objects>
             <point key="canvasLocation" x="2705" y="480"/>
         </scene>
-        <!--Completion Table View Controller-->
-        <scene sceneID="udh-EQ-uZO">
+        <!--Auto Complete Table View Controller-->
+        <scene sceneID="zQR-Mk-fPu">
             <objects>
-                <tableViewController storyboardIdentifier="completionTableView" id="dIx-kS-0uT" customClass="CompletionTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uJT-LL-Egj">
+                <tableViewController storyboardIdentifier="autoCompleteTableView" id="0Ik-9M-itq" customClass="AutoCompleteTableViewController" customModule="MoonPhase" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EB6-rd-lDf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="separatorColor" name="Background Blue"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="completionCell" id="oCs-Fv-iO7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="autoCompleteCell" id="Exe-QO-2ly">
                                 <rect key="frame" x="0.0" y="24.333333969116211" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oCs-Fv-iO7" id="e7F-gp-ueh">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Exe-QO-2ly" id="0yY-Yi-OlE">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="dIx-kS-0uT" id="xiP-t7-BWu"/>
-                            <outlet property="delegate" destination="dIx-kS-0uT" id="MOr-5e-qik"/>
+                            <outlet property="dataSource" destination="0Ik-9M-itq" id="mAA-Gf-Tnc"/>
+                            <outlet property="delegate" destination="0Ik-9M-itq" id="wFb-By-mTp"/>
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="completionTableView" destination="uJT-LL-Egj" id="M6l-TX-3z9"/>
+                        <outlet property="autoCompleteTableView" destination="EB6-rd-lDf" id="tHR-6c-sm4"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U0z-Dq-vPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHI-Ik-8Ex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3463" y="479"/>
+            <point key="canvasLocation" x="3412" y="479"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
