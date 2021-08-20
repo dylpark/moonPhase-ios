@@ -13,16 +13,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchController
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    let regionInMeters: CLLocationDistance = 10000
     var searchController: UISearchController? = nil
-    //    var resultsViewController: GMSAutocompleteResultsViewController?
-    //    var resultView: UITextView?
     var selectedLocation = CLLocationCoordinate2D()
     var droppedPin = MKPointAnnotation()
     var selectedLocationLabel = String()
+    let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
     var selectedPin: MKPlacemark? = nil
-    var userSelectedLocation: MKPointAnnotation?
     var mapItems: [MKMapItem] = []
     
     override func viewDidLoad() {
@@ -124,11 +121,11 @@ extension MapViewController: UISearchBarDelegate {
             
             self.mapItems = response.mapItems
             
-            let selectedItem = self.mapItems[0].placemark
-            self.dropPinZoomIn(placemark: selectedItem)
+            let selectedPin = self.mapItems[0].placemark
+            self.dropPinZoomIn(placemark: selectedPin)
             
-            self.dismiss(animated: true, completion: nil)
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -143,26 +140,28 @@ protocol CompleteMapSearch {
 extension MapViewController: CompleteMapSearch {
     
     func dropPinZoomIn(placemark: MKPlacemark) {
-        // Cache the Pin
+
         selectedPin = placemark
-        
-        // Clear Existing Pins
         mapView.removeAnnotations(mapView.annotations)
-        
-        // Getting Data & Creating Pin
-        let userSelectedLocation = MKPointAnnotation()
-        userSelectedLocation.coordinate = placemark.coordinate
+
+        let droppedPin = MKPointAnnotation()
+        droppedPin.coordinate = placemark.coordinate
         
         if let city = placemark.locality,
-           let state = placemark.administrativeArea,
            let country = placemark.country {
-            userSelectedLocation.subtitle = "\(city) \(state), \(country)"
+            droppedPin.subtitle = "\(city), \(country)"
+            selectedLocationLabel = "\(city)"
         }
-        mapView.addAnnotation(userSelectedLocation)
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        mapView.addAnnotation(droppedPin)
+        
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         self.mapView.setRegion(region, animated: true)
+        
+        let selectedLocation = selectedPin?.coordinate
+        
+        UserDefaults.standard.set(location: selectedLocation)
+        UserDefaults.standard.setLabel(label: self.selectedLocationLabel)
     }
     
 }
@@ -175,10 +174,8 @@ extension MapViewController: CLLocationManagerDelegate {
     func centreViewOnUserLocation() {
         
         locationManager.delegate = self
-        
-        guard let location = locationManager.location?.coordinate else { return }
-        
-        let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        guard let currentLocation = locationManager.location?.coordinate else { return }
+        let region = MKCoordinateRegion(center: currentLocation, span: span)
         mapView.setRegion(region, animated: true)
         
     }
