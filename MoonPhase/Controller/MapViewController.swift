@@ -21,23 +21,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchController
     var selectedLocationLabel = String()
     var mapItems: [MKMapItem] = []
     
-    enum Segues {
+    enum Segue {
         static let cancel = "cancel"
     }
     
-    enum Colours {
+    enum Colour {
         static let backgroundBlue = "Background Blue"
         static let codGrey = "Cod Grey"
         static let superLightGrey = "Super Light Grey"
         static let lightGrey = "Light Grey"
     }
     
-    enum Identifiers {
+    enum Identifier {
         static let navigationController = "navigationController"
         static let autoCompleteTableViewController = "autoCompleteTableViewController"
     }
     
-    enum Strings {
+    enum Text {
         static let navTitle = "Location Search"
         static let searchBarPlaceholder = "Search"
         static let customSearchFieldKey = "searchField"
@@ -61,7 +61,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == Segues.cancel {
+        if segue.identifier == Segue.cancel {
             UserDefaults.standard.set(location: nil)
             UserDefaults.standard.setLabel(label: nil)
         }
@@ -71,13 +71,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchController
     //MARK: - View Configuration
     
     func configureNavController() {
-        title = Strings.navTitle
+        title = Text.navTitle
         navigationController?.view.isHidden = false
-        navigationController?.storyboard?.instantiateViewController(withIdentifier: Identifiers.navigationController)
+        navigationController?.storyboard?.instantiateViewController(withIdentifier: Identifier.navigationController)
     }
     
     func configureSearchResultsTable() {
-        let autoCompleteTable = storyboard!.instantiateViewController(withIdentifier: Identifiers.autoCompleteTableViewController)
+        let autoCompleteTable = storyboard!.instantiateViewController(withIdentifier: Identifier.autoCompleteTableViewController)
             as! AutoCompleteTableViewController
         
         autoCompleteTable.mapView = mapView
@@ -96,10 +96,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchController
         searchController?.searchBar.barStyle = .black
         searchController?.searchBar.tintColor = .white
         searchController?.searchBar.searchTextField.textColor = .white
-        searchController?.searchBar.backgroundColor = UIColor(named: Colours.backgroundBlue)
-        searchController?.searchBar.searchTextField.backgroundColor = UIColor(named: Colours.codGrey)
-        searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: Strings.searchBarPlaceholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(named: Colours.superLightGrey)!])
-        searchController?.searchBar.setSearchBarIconColorTo(color: UIColor(named: Colours.lightGrey)!)
+        searchController?.searchBar.backgroundColor = UIColor(named: Colour.backgroundBlue)
+        searchController?.searchBar.searchTextField.backgroundColor = UIColor(named: Colour.codGrey)
+        searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: Text.searchBarPlaceholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(named: Colour.superLightGrey)!])
+        searchController?.searchBar.setSearchBarIconColorTo(color: UIColor(named: Colour.lightGrey)!)
     }
     
     func setSearchIconColorTo(color: UIColor) {

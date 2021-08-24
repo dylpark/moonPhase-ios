@@ -19,14 +19,26 @@ class CalendarViewController: UIViewController {
     let dateFormatter = DateFormatter()
     let colourModel = ColourModel()
     
+    enum Segue {
+        static let done = "donePressed"
+    }
+    
+    enum Colour {
+        static let lightGrey = "Light Grey"
+    }
+    
+    enum DateFormatting {
+        static let format = "EEE, d MMM"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             
         doneButton.layer.masksToBounds = true
-        doneButton.addBorders(edges: .left, color: UIColor(named: "Light Grey")!, thickness: 0.5)
+        doneButton.addBorders(edges: .left, color: UIColor(named: Colour.lightGrey)!, thickness: 0.5)
         
         buttonStackView.layer.masksToBounds = true
-        buttonStackView.addBorders(edges: .top, color: UIColor(named: "Light Grey")!, thickness: 0.5)
+        buttonStackView.addBorders(edges: .top, color: UIColor(named: Colour.lightGrey)!, thickness: 0.5)
         
         calendarStackView.layer.cornerRadius = 10
         calendarStackView.layer.masksToBounds = true
@@ -40,9 +52,9 @@ class CalendarViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        dateFormatter.dateFormat = "EEE, d MMM"
+        dateFormatter.dateFormat = DateFormatting.format
         
-        if segue.identifier == "donePressed" {
+        if segue.identifier == Segue.done {
             let destinationController = segue.destination as! ViewController
             destinationController.userSelectedDate = userSelectedDate ?? Date()
         }
