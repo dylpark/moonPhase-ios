@@ -16,7 +16,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var googleMapsView: GMSMapView!
     
     let locationManager = CLLocationManager()
-    let regionInMeters: CLLocationDistance = 10000
     var searchController: UISearchController?
     var resultsViewController: GMSAutocompleteResultsViewController?
     var resultView: UITextView?
