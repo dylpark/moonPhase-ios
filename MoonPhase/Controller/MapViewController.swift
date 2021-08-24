@@ -36,7 +36,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     enum Identifier {
         static let navigationController = "navigationController"
-        static let autoCompleteTableViewController = "autoCompleteTableViewController"
     }
     
     enum Text {
