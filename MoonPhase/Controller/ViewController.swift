@@ -37,8 +37,6 @@ class ViewController: UIViewController {
     enum Text {
         static let locationPlaceholder = "Location"
         static let error = "Error"
-        static let newMoonText = "New Moon"
-        static let fullMoonText = "Location"
     }
     
     enum DateFormatting {
@@ -76,9 +74,9 @@ extension ViewController: MoonManagerDelegate {
             self.moonIlluminationLabel.text = "\(moon.moonIllumination)%"
             self.phaseImageView.image = moon.moonPhaseImage
             self.newMoonCounterLabel.text
-                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "\(Text.newMoonText)")))) days")
+                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "New Moon")))) days")
             self.fullMoonCounterLabel.text
-                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "\(Text.fullMoonText)")))) days")
+                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "Full Moon")))) days")
             self.activityIndicator.stopAnimating()
         }
     }
