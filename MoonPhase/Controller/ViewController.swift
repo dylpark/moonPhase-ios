@@ -32,17 +32,6 @@ class ViewController: UIViewController {
     var userSelectedDate = Date()
     let dateFormatter = DateFormatter()
     let requestedDateFormatter = DateFormatter()
-    let sydney = CLLocation(latitude: -33.865143, longitude: 151.209900)
-    
-    enum Text {
-        static let locationPlaceholder = "Location"
-        static let error = "Error"
-    }
-    
-    enum DateFormatting {
-        static let format = "EEE, d MMM"
-        static let fetchMoonFormat = "yyyy-MM-dd"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +39,7 @@ class ViewController: UIViewController {
         moonManager.delegate = self
         locationManager.delegate = self
         
-        dateFormatter.dateFormat = DateFormatting.format
+        dateFormatter.dateFormat = "EEE, d MMM"
         dateLabel.text = dateFormatter.string(from: userSelectedDate)
 
         initialiseLocationServices()
@@ -77,6 +66,7 @@ extension ViewController: MoonManagerDelegate {
                 = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "New Moon")))) days")
             self.fullMoonCounterLabel.text
                 = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "Full Moon")))) days")
+            
             self.activityIndicator.stopAnimating()
         }
     }
@@ -164,7 +154,7 @@ extension ViewController: CLLocationManagerDelegate {
         
         activityIndicator.startAnimating()
         
-        requestedDateFormatter.dateFormat = DateFormatting.fetchMoonFormat
+        requestedDateFormatter.dateFormat = "yyyy-MM-dd"
         
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
@@ -181,14 +171,14 @@ extension ViewController: CLLocationManagerDelegate {
                 if placemark.locality != nil {
                     self.cityLabel.text! = (String(describing: placemark.locality!))
                 } else {
-                    self.cityLabel.text = Text.locationPlaceholder
+                    self.cityLabel.text = "Location"
                 }
             }
         }
         
     }
     
-    //MARK: - Current Location: Label
+    //MARK: - Current Location - Label
     
     func getPlace(for location: CLLocation,
                   completion: @escaping (CLPlacemark?) -> Void) {
@@ -218,7 +208,7 @@ extension ViewController: CLLocationManagerDelegate {
         
         activityIndicator.startAnimating()
         
-        requestedDateFormatter.dateFormat = DateFormatting.fetchMoonFormat
+        requestedDateFormatter.dateFormat = "yyyy-MM-dd"
         
         if let location = UserDefaults.standard.location() {
             
@@ -229,12 +219,12 @@ extension ViewController: CLLocationManagerDelegate {
             if let locationLabel = UserDefaults.standard.getLabel() {
                 self.cityLabel.text! = locationLabel
             } else {
-                self.cityLabel.text! = Text.error
+                self.cityLabel.text! = "Error"
             }
             
         } else if UserDefaults.standard.location() == nil {
             
-            let HardCodedLocation = sydney
+            let HardCodedLocation = CLLocation(latitude: -33.865143, longitude: 151.209900)
             
             moonManager.fetchMoon(latitude: HardCodedLocation.coordinate.latitude,
                                   longitude: HardCodedLocation.coordinate.longitude,
@@ -246,7 +236,7 @@ extension ViewController: CLLocationManagerDelegate {
                 if placemark.locality != nil {
                     self.cityLabel.text! = (String(describing: placemark.locality!))
                 } else {
-                    self.cityLabel.text = Text.error
+                    self.cityLabel.text = "Error"
                 }
             }
         }

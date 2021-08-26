@@ -16,32 +16,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var googleMapsView: GMSMapView!
     
     let locationManager = CLLocationManager()
+    let regionInMeters: CLLocationDistance = 10000
     var searchController: UISearchController?
     var resultsViewController: GMSAutocompleteResultsViewController?
     var resultView: UITextView?
     var selectedLocation = CLLocationCoordinate2D()
     var droppedPin = MKPointAnnotation()
     var selectedLocationLabel = String()
-    
-    enum Segue {
-        static let cancel = "cancel"
-    }
-    
-    enum Colour {
-        static let backgroundBlue = "Background Blue"
-        static let codGrey = "Cod Grey"
-        static let superLightGrey = "Super Light Grey"
-        static let lightGrey = "Light Grey"
-    }
-    
-    enum Identifier {
-        static let navigationController = "navigationController"
-    }
-    
-    enum Text {
-        static let navTitle = "Location Search"
-        static let searchBarPlaceholder = "Search"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +39,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == Segue.cancel {
+
+        if segue.identifier == "cancel" {
             UserDefaults.standard.set(location: nil)
             UserDefaults.standard.setLabel(label: nil)
         }
@@ -86,16 +67,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - View Configuration
     
     func configureNavController() {
-        title = Text.navTitle
+        title = "Location Search"
         navigationController?.view.isHidden = false
-        navigationController?.view.backgroundColor = UIColor(named: Colour.backgroundBlue)
-        navigationController?.storyboard?.instantiateViewController(withIdentifier: Identifier.navigationController)
+        navigationController?.view.backgroundColor = UIColor(named: "Background Blue")
+        navigationController?.storyboard?.instantiateViewController(withIdentifier: "navigationController")
     }
     
     func configureResultsViewController() {
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
-        resultsViewController?.tableCellBackgroundColor = UIColor(named: Colour.backgroundBlue) ?? .systemBackground
+        resultsViewController?.tableCellBackgroundColor = UIColor(named: "Background Blue") ?? .systemBackground
         resultsViewController?.primaryTextColor = .lightGray
         resultsViewController?.primaryTextHighlightColor = .white
         resultsViewController?.secondaryTextColor = .white
@@ -109,22 +90,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         searchController?.searchBar.barStyle = .black
         searchController?.searchBar.tintColor = .white
         searchController?.searchBar.searchTextField.textColor = .white
-        searchController?.searchBar.backgroundColor = UIColor(named: Colour.backgroundBlue)
-        searchController?.searchBar.searchTextField.backgroundColor = UIColor(named: Colour.codGrey)
-        searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: Text.searchBarPlaceholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(named: Colour.superLightGrey)!])
-        searchController?.searchBar.setSearchBarIconColorTo(color: UIColor(named: Colour.lightGrey)!)
+        searchController?.searchBar.backgroundColor = UIColor(named: "Background Blue")
+        searchController?.searchBar.searchTextField.backgroundColor = UIColor(named: "Cod Grey")
+        searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor : UIColor(named: "Super Light Grey")!])
+        searchController?.searchBar.setSearchBarIconColorTo(color: UIColor(named: "Light Grey")!)
         searchController?.hidesNavigationBarDuringPresentation = false
         searchController?.searchBar.sizeToFit()
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
     
-    func setSearchIconColorTo(color: UIColor) {
-        let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
-        let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
-        glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
-        glassIconView?.tintColor = color
-    }
+    func setSearchIconColorTo(color: UIColor)
+        {
+            let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
+            let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
+            glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
+            glassIconView?.tintColor = color
+        }
     
 }
 

@@ -18,20 +18,12 @@ class AlertViewController: UIViewController {
     let colourModel = ColourModel()
     let locationManager = CLLocationManager()
     
-    enum Segue {
-        static let currentLocation = "useCurrentLocation"
-    }
-    
-    enum Colour {
-        static let lightGrey = "Light Grey"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentLocationButton.addBorders(edges: .top, color: UIColor(named: Colour.lightGrey)!, thickness: 0.5)
-        searchLocationButton.addBorders(edges: .top, color: UIColor(named: Colour.lightGrey)!, thickness: 0.5)
-        cancelButton.addBorders(edges: .top, color: UIColor(named: Colour.lightGrey)!, thickness: 0.5)
+        currentLocationButton.addBorders(edges: .top, color: UIColor(named: "Light Grey")!, thickness: 0.5)
+        searchLocationButton.addBorders(edges: .top, color: UIColor(named: "Light Grey")!, thickness: 0.5)
+        cancelButton.addBorders(edges: .top, color: UIColor(named: "Light Grey")!, thickness: 0.5)
         
         masterStackView.layer.cornerRadius = 10
         masterStackView.layer.borderWidth = 1
@@ -42,7 +34,7 @@ class AlertViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == Segue.currentLocation {
+        if segue.identifier == "useCurrentLocation" {
             checkLocationAutorisationWithAlert()
         }
 
