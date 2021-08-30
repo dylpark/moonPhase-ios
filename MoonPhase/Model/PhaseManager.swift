@@ -6,6 +6,7 @@
 //  Copyright © 2021 Dylan Park. All rights reserved.
 
 import Foundation
+import CoreLocation
 
 class PhaseManager {
 

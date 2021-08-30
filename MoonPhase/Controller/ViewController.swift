@@ -9,7 +9,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import GooglePlaces
-import EKAstrologyCalc
+import MoonTool
 
 class ViewController: UIViewController {
     
@@ -33,9 +33,7 @@ class ViewController: UIViewController {
     var userSelectedDate = Date()
     let dateFormatter = DateFormatter()
     let requestedDateFormatter = DateFormatter()
-    
-    let location = CLLocation(latitude: 55.751244, longitude: 37.618423) // Moscow
-    var moonPhaseManager: EKAstrologyCalc!
+    let sydney = CLLocation(latitude: -33.865143, longitude: 151.209900)
     
     override func viewDidLoad() {
         
@@ -50,22 +48,18 @@ class ViewController: UIViewController {
         initialiseLocationServices()
         initialLocationAuthCheck()
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let someDateTime = formatter.date(from: "2021/08/22 12:00")
         
-        moonPhaseManager = EKAstrologyCalc(location: location)
+        let now = someDateTime!
+        let moon = Moon(at: now)
 
-        let info = moonPhaseManager.getInfo(date: Date())
+        print(String(describing: moon))
+        print("\(moon.phase)")
+        print("\(moon.illuminated)")
+        print("\(moon.age)")
 
-        print("Current localtion: -", info.location.coordinate)
-
-        print("Moon days at", "current date: -", info.date)
-        info.moonModels.forEach {
-            print("===========")
-            print("Moon Age: -", $0.age)
-//            print("Moon rise: -", $0.moonRise)
-//            print("Moon set: -", $0.moonSet)
-        }
-        print("===========")
-        print("Moon phase: -", info.phase, info.illumination!)
         
     }
     
@@ -246,7 +240,7 @@ extension ViewController: CLLocationManagerDelegate {
             
         } else if UserDefaults.standard.location() == nil {
             
-            let HardCodedLocation = CLLocation(latitude: -33.865143, longitude: 151.209900)
+            let HardCodedLocation = sydney
             
             moonManager.fetchMoon(latitude: HardCodedLocation.coordinate.latitude,
                                   longitude: HardCodedLocation.coordinate.longitude,

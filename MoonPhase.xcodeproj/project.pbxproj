@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC11941B26B8C8B10091AB19 /* Pods_MoonPhase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */; };
-		FC17D1FF26DC83C7006C6F2D /* EKAstrologyCalc in Frameworks */ = {isa = PBXBuildFile; productRef = FC17D1FE26DC83C7006C6F2D /* EKAstrologyCalc */; };
+		FC17D20226DC8F45006C6F2D /* MoonTool in Frameworks */ = {isa = PBXBuildFile; productRef = FC17D20126DC8F45006C6F2D /* MoonTool */; };
 		FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */; };
 		FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EC2654D4120062B6F6 /* MoonData.swift */; };
 		FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EE2654D4280062B6F6 /* MoonManager.swift */; };
@@ -61,8 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC17D1FF26DC83C7006C6F2D /* EKAstrologyCalc in Frameworks */,
 				FC11941B26B8C8B10091AB19 /* Pods_MoonPhase.framework in Frameworks */,
+				FC17D20226DC8F45006C6F2D /* MoonTool in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +174,7 @@
 			);
 			name = MoonPhase;
 			packageProductDependencies = (
-				FC17D1FE26DC83C7006C6F2D /* EKAstrologyCalc */,
+				FC17D20126DC8F45006C6F2D /* MoonTool */,
 			);
 			productName = "Moon-iOS14";
 			productReference = FCDBDE58265219EB002E74B8 /* MoonPhase.app */;
@@ -204,7 +204,7 @@
 			);
 			mainGroup = FCDBDE4F265219EB002E74B8;
 			packageReferences = (
-				FC17D1FD26DC83C7006C6F2D /* XCRemoteSwiftPackageReference "EKAstrologyCalc" */,
+				FC17D20026DC8F45006C6F2D /* XCRemoteSwiftPackageReference "MoonTool" */,
 			);
 			productRefGroup = FCDBDE59265219EB002E74B8 /* Products */;
 			projectDirPath = "";
@@ -511,21 +511,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC17D1FD26DC83C7006C6F2D /* XCRemoteSwiftPackageReference "EKAstrologyCalc" */ = {
+		FC17D20026DC8F45006C6F2D /* XCRemoteSwiftPackageReference "MoonTool" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/emvakar/EKAstrologyCalc.git";
+			repositoryURL = "https://github.com/dylpark/MoonTool.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.4;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FC17D1FE26DC83C7006C6F2D /* EKAstrologyCalc */ = {
+		FC17D20126DC8F45006C6F2D /* MoonTool */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC17D1FD26DC83C7006C6F2D /* XCRemoteSwiftPackageReference "EKAstrologyCalc" */;
-			productName = EKAstrologyCalc;
+			package = FC17D20026DC8F45006C6F2D /* XCRemoteSwiftPackageReference "MoonTool" */;
+			productName = MoonTool;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
