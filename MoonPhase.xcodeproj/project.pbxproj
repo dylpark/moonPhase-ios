@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC11941B26B8C8B10091AB19 /* Pods_MoonPhase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */; };
 		FC17D20226DC8F45006C6F2D /* MoonTool in Frameworks */ = {isa = PBXBuildFile; productRef = FC17D20126DC8F45006C6F2D /* MoonTool */; };
+		FC17D20426DC95DE006C6F2D /* MoonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17D20326DC95DE006C6F2D /* MoonTool.swift */; };
 		FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */; };
 		FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EC2654D4120062B6F6 /* MoonData.swift */; };
 		FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EE2654D4280062B6F6 /* MoonManager.swift */; };
@@ -33,6 +34,7 @@
 		8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonPhase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonPhase.debug.xcconfig"; path = "Target Support Files/Pods-MoonPhase/Pods-MoonPhase.debug.xcconfig"; sourceTree = "<group>"; };
 		F10D711200C752199B9EAF9A /* Pods-MoonPhase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonPhase.release.xcconfig"; path = "Target Support Files/Pods-MoonPhase/Pods-MoonPhase.release.xcconfig"; sourceTree = "<group>"; };
+		FC17D20326DC95DE006C6F2D /* MoonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonTool.swift; sourceTree = "<group>"; };
 		FC3599BC26B523390017BF9B /* MoonPhase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoonPhase.entitlements; sourceTree = "<group>"; };
 		FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonModel.swift; sourceTree = "<group>"; };
 		FC5485EC2654D4120062B6F6 /* MoonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonData.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				FCDD2F4F26A2569200440A75 /* UserDefaults.swift */,
 				FC5BD160269027E4000D51A7 /* ColourModel.swift */,
 				FC9C54A426982793001FD91F /* ApiKeys.swift */,
+				FC17D20326DC95DE006C6F2D /* MoonTool.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC17D20426DC95DE006C6F2D /* MoonTool.swift in Sources */,
 				FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */,
 				FCE2BCD0265CE810003309EC /* MoonPhase.swift in Sources */,
 				FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */,

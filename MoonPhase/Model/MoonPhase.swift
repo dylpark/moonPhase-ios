@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MoonPhase: String {
+public enum MoonPhase: String {
     case NEW_MOON = "New Moon"
     case WAXING_CRESCENT = "Waxing Crescent"
     case FIRST_QUARTER = "First Quarter"

@@ -28,12 +28,14 @@ class ViewController: UIViewController {
     
     var moonManager = MoonManager()
     var phaseManager = PhaseManager()
+    let moonTool = MoonTool()
     let locationManager = CLLocationManager()
     var locationManagerAuthorizing = false
+    let sydney = CLLocation(latitude: -33.865143, longitude: 151.209900)
     var userSelectedDate = Date()
     let dateFormatter = DateFormatter()
     let requestedDateFormatter = DateFormatter()
-    let sydney = CLLocation(latitude: -33.865143, longitude: 151.209900)
+
     
     override func viewDidLoad() {
         
@@ -48,18 +50,6 @@ class ViewController: UIViewController {
         initialiseLocationServices()
         initialLocationAuthCheck()
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        let someDateTime = formatter.date(from: "2021/08/22 12:00")
-        
-        let now = someDateTime!
-        let moon = Moon(at: now)
-
-        print(String(describing: moon))
-        print("\(moon.phase)")
-        print("\(moon.illuminated)")
-        print("\(moon.age)")
-
         
     }
     
@@ -75,8 +65,13 @@ extension ViewController: MoonManagerDelegate {
             self.sunsetLabel.text = moon.sunsetTime
             self.moonriseLabel.text = moon.moonriseTime
             self.moonsetLabel.text = moon.moonsetTime
-            self.phaseLabel.text = moon.moonPhase.rawValue
-            self.moonIlluminationLabel.text = "\(moon.moonIllumination)%"
+            
+//            self.phaseLabel.text = moon.moonPhase.rawValue
+                self.phaseLabel.text = self.moonTool.getMoonPhase(userSelectedDate: self.userSelectedDate)
+            
+//            self.moonIlluminationLabel.text = "\(moon.moonIllumination)%"
+                self.moonIlluminationLabel.text = self.moonTool.getMoonIllumination(userSelectedDate: self.userSelectedDate)
+            
             self.phaseImageView.image = moon.moonPhaseImage
             self.newMoonCounterLabel.text
                 = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "New Moon")))) days")
