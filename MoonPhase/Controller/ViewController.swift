@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import GooglePlaces
+import EKAstrologyCalc
 
 class ViewController: UIViewController {
     
@@ -33,7 +34,11 @@ class ViewController: UIViewController {
     let dateFormatter = DateFormatter()
     let requestedDateFormatter = DateFormatter()
     
+    let location = CLLocation(latitude: 55.751244, longitude: 37.618423) // Moscow
+    var moonPhaseManager: EKAstrologyCalc!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         moonManager.delegate = self
@@ -44,6 +49,23 @@ class ViewController: UIViewController {
 
         initialiseLocationServices()
         initialLocationAuthCheck()
+        
+        
+        moonPhaseManager = EKAstrologyCalc(location: location)
+
+        let info = moonPhaseManager.getInfo(date: Date())
+
+        print("Current localtion: -", info.location.coordinate)
+
+        print("Moon days at", "current date: -", info.date)
+        info.moonModels.forEach {
+            print("===========")
+            print("Moon Age: -", $0.age)
+//            print("Moon rise: -", $0.moonRise)
+//            print("Moon set: -", $0.moonSet)
+        }
+        print("===========")
+        print("Moon phase: -", info.phase, info.illumination!)
         
     }
     

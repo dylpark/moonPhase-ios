@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "EKAstrologyCalc",
+        "repositoryURL": "https://github.com/emvakar/EKAstrologyCalc.git",
+        "state": {
+          "branch": null,
+          "revision": "8ea7cf2100b844a724626dd6bdc55ee00d8af5d3",
+          "version": "1.0.5"
+        }
+      },
+      {
+        "package": "ESDateHelper",
+        "repositoryURL": "https://github.com/ESKARIA/ESDateHelper.git",
+        "state": {
+          "branch": null,
+          "revision": "c6c6af34536f3afd3996b6a922f66e2bea0479ab",
+          "version": "1.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
