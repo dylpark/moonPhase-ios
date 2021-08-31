@@ -53,26 +53,16 @@ struct MoonManager {
         do {
             let decodedData = try decoder.decode(MoonData.self, from: moonData)
             
-            let cityName = decodedData.location.name
-            let region = decodedData.location.region
-            let country = decodedData.location.country
             let sunrise = decodedData.astronomy.astro.sunrise
             let sunset = decodedData.astronomy.astro.sunset
             let moonrise = decodedData.astronomy.astro.moonrise
             let moonset = decodedData.astronomy.astro.moonset
-            let moon_phase = decodedData.astronomy.astro.moon_phase
-            let moon_illumination = decodedData.astronomy.astro.moon_illumination
             
             let moon = MoonModel(
-                cityName: cityName,
-                region: region,
-                country: country,
                 sunriseTime: sunrise,
                 sunsetTime: sunset,
                 moonriseTime: moonrise,
-                moonsetTime: moonset,
-                moonPhase: MoonPhase(rawValue: moon_phase)!,
-                moonIllumination: moon_illumination
+                moonsetTime: moonset
             )
             
             return moon

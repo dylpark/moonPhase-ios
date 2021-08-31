@@ -8,14 +8,7 @@
 import Foundation
 
 struct MoonData: Codable {
-    let location: Location
     let astronomy: Astronomy
-}
-
-struct Location: Codable {
-    let name: String
-    let region: String
-    let country: String
 }
 
 struct Astronomy: Codable {
@@ -27,6 +20,4 @@ struct Astro: Codable {
     let sunset: String
     let moonrise: String
     let moonset: String
-    let moon_phase: String
-    let moon_illumination: String
 }

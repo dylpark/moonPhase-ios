@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     var moonManager = MoonManager()
     var phaseManager = PhaseManager()
-    let moonTool = MoonTool()
+    let moonToolModel = MoonToolModel()
     let locationManager = CLLocationManager()
     var locationManagerAuthorizing = false
     let sydney = CLLocation(latitude: -33.865143, longitude: 151.209900)
@@ -63,19 +63,19 @@ extension ViewController: MoonManagerDelegate {
             self.sunsetLabel.text = moon.sunsetTime
             self.moonriseLabel.text = moon.moonriseTime
             self.moonsetLabel.text = moon.moonsetTime
+            self.phaseLabel.text = self.moonToolModel.getMoonPhase(userSelectedDate: self.userSelectedDate)
+            self.moonIlluminationLabel.text = self.moonToolModel.getMoonIllumination(userSelectedDate: self.userSelectedDate)
             
-//            self.phaseLabel.text = moon.moonPhase.rawValue
-                self.phaseLabel.text = self.moonTool.getMoonPhase(userSelectedDate: self.userSelectedDate)
-//            self.phaseLabel.text = self.moonTool.getPhase(userSelectedDate: self.userSelectedDate)
             
-//            self.moonIlluminationLabel.text = "\(moon.moonIllumination)%"
-                self.moonIlluminationLabel.text = self.moonTool.getMoonIllumination(userSelectedDate: self.userSelectedDate)
             
-            self.phaseImageView.image = moon.moonPhaseImage
-            self.newMoonCounterLabel.text
-                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "New Moon")))) days")
-            self.fullMoonCounterLabel.text
-                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "Full Moon")))) days")
+//            self.phaseImageView.image = self.moonToolModel.getMoonPhase(userSelectedDate: self.userSelectedDate)
+                
+//            self.newMoonCounterLabel.text
+//                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "New Moon")))) days")
+//            self.fullMoonCounterLabel.text
+//                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "Full Moon")))) days")
+            
+            self.newMoonCounterLabel.text = self.moonToolModel.getPhaseForDate(userSelectedDate: self.userSelectedDate)
             
             self.activityIndicator.stopAnimating()
         }
