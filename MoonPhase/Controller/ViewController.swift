@@ -65,18 +65,13 @@ extension ViewController: MoonManagerDelegate {
             self.moonsetLabel.text = moon.moonsetTime
             self.phaseLabel.text = self.moonToolModel.getMoonPhase(userSelectedDate: self.userSelectedDate)
             self.moonIlluminationLabel.text = self.moonToolModel.getMoonIllumination(userSelectedDate: self.userSelectedDate)
-            
-            
-            
-//            self.phaseImageView.image = self.moonToolModel.getMoonPhase(userSelectedDate: self.userSelectedDate)
+            self.phaseImageView.image = self.moonToolModel.getPhaseImageView(userSelectedDate: self.userSelectedDate)
                 
 //            self.newMoonCounterLabel.text
 //                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "New Moon")))) days")
 //            self.fullMoonCounterLabel.text
 //                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "Full Moon")))) days")
-            
-            self.newMoonCounterLabel.text = self.moonToolModel.getPhaseForDate(userSelectedDate: self.userSelectedDate)
-            
+                        
             self.activityIndicator.stopAnimating()
         }
     }
