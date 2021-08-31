@@ -3,7 +3,7 @@
 //  MoonPhase
 //
 //  Created by Dylan Park on 30/8/21.
-//
+//  Copyright © 2021 Dylan Park. All rights reserved.
 
 import Foundation
 import MoonTool
@@ -42,23 +42,9 @@ struct MoonTool {
         
         let moon = Moon(at: userSelectedDate)
         let illumination = moon.illuminated
-        let moonIllumination = "\(String(format: "%.1f", illumination))%"
+        let moonIllumination = "\(String(Int(round(illumination))))%"
         
         return moonIllumination
     }
-    
-//    let formatter = DateFormatter()
-//    formatter.dateFormat = "yyyy/MM/dd HH:mm"
-//    let someDateTime = formatter.date(from: "2021/03/29 12:00")
-//    var currentPhase = String()
-//
-//    let now = someDateTime!
-//    let moon = Moon(at: now)
-//
-//    print(String(describing: moon))
-//    print(String(describing: moon.illuminated))
-//    print(String(describing: moon.age))
-//
-//    print(String(ceil(moon.illuminated)))
     
 }
