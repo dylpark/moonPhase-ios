@@ -17,61 +17,82 @@ struct MoonToolModel {
         
         let moon = Moon(at: userSelectedDate)
         let age: Double = moon.age
-        var phase: MoonPhase
+        var currentPhase: MoonPhase
         
         if (age < 1.84566) {
-            phase = .newMoon
+            currentPhase = .newMoon
         } else if (age < 5.53699) {
-            phase = .waxingCrescent
+            currentPhase = .waxingCrescent
         } else if (age < 9.22831) {
-            phase = .firstQuarter
+            currentPhase = .firstQuarter
         } else if (age < 12.91963) {
-            phase = .waxingGibbous
+            currentPhase = .waxingGibbous
         } else if (age < 16.61096) {
-            phase = .fullMoon
+            currentPhase = .fullMoon
         } else if (age < 20.30228) {
-            phase = .waningGibbous
+            currentPhase = .waningGibbous
         } else if (age < 23.99361) {
-            phase = .lastQuarter
+            currentPhase = .lastQuarter
         } else if (age < 27.68493) {
-            phase = .waningCrescent
+            currentPhase = .waningCrescent
         } else {
-            phase = .newMoon
+            currentPhase = .newMoon
         }
-        
-        return phase.rawValue
+        return currentPhase.rawValue
+    
     }
     
     //MARK: - Phase Image
     
-//    func getPhaseImageView(userSelectedDate: Date) -> UIImage {
-//        
-//        let moon = Moon(at: userSelectedDate)
-//        let illumination = moon.illuminated
-//        
-//        var moonPhaseImage: UIImage {
-//            switch illumination {
-//            case .newMoon:
-//                return #imageLiteral(resourceName: "New Moon")
-//            case .waxingCrescent:
-//                return #imageLiteral(resourceName: "Waxing Crescent")
-//            case .firstQuarter:
-//                return #imageLiteral(resourceName: "Last Quarter")
-//            case .waxingGibbous:
-//                return #imageLiteral(resourceName: "Waxing Gibbous")
-//            case .fullMoon:
-//                return #imageLiteral(resourceName: "Full Moon")
-//            case .waningGibbous:
-//                return #imageLiteral(resourceName: "Waning Gibbous")
-//            case .lastQuarter:
-//                return #imageLiteral(resourceName: "First Quarter")
-//            case .waningCrescent:
-//                return #imageLiteral(resourceName: "Waning Crescent")
-//            }
-//        }
-//        return moonPhaseImage
-//        
-//    }
+    func getPhaseImageView(userSelectedDate: Date) -> UIImage {
+        
+        let moon = Moon(at: userSelectedDate)
+        let age: Double = moon.age
+        var currentPhase: MoonPhase
+        
+        if (age < 1.84566) {
+            currentPhase = .newMoon
+        } else if (age < 5.53699) {
+            currentPhase = .waxingCrescent
+        } else if (age < 9.22831) {
+            currentPhase = .firstQuarter
+        } else if (age < 12.91963) {
+            currentPhase = .waxingGibbous
+        } else if (age < 16.61096) {
+            currentPhase = .fullMoon
+        } else if (age < 20.30228) {
+            currentPhase = .waningGibbous
+        } else if (age < 23.99361) {
+            currentPhase = .lastQuarter
+        } else if (age < 27.68493) {
+            currentPhase = .waningCrescent
+        } else {
+            currentPhase = .newMoon
+        }
+        
+        var moonPhaseImage: UIImage {
+            switch currentPhase {
+            case .newMoon:
+                return #imageLiteral(resourceName: "New Moon")
+            case .waxingCrescent:
+                return #imageLiteral(resourceName: "Waxing Crescent")
+            case .firstQuarter:
+                return #imageLiteral(resourceName: "Last Quarter")
+            case .waxingGibbous:
+                return #imageLiteral(resourceName: "Waxing Gibbous")
+            case .fullMoon:
+                return #imageLiteral(resourceName: "Full Moon")
+            case .waningGibbous:
+                return #imageLiteral(resourceName: "Waning Gibbous")
+            case .lastQuarter:
+                return #imageLiteral(resourceName: "First Quarter")
+            case .waningCrescent:
+                return #imageLiteral(resourceName: "Waning Crescent")
+            }
+        }
+        return moonPhaseImage
+        
+    }
     
     //MARK: - Moon Illumination %
     
@@ -84,28 +105,8 @@ struct MoonToolModel {
         return moonIllumination
     }
     
-    //MARK: - Phase for Date
+    //MARK: - Date for next New Moon
     
-    func getPhaseForDate(userSelectedDate: Date) -> String {
-        
-        let moon = Moon(at: userSelectedDate)
-        let age: Double = moon.age
-        
-        let ageInDays = [
-            0...1                                   : "New Moon",
-            1...6.38264692644                       : "Waxing Crescent",
-            6.38264692644...8.38264692644           : "First Quarter",
-            8.38264692644...13.76529385288          : "Waxing Gibbous",
-            13.76529385288...15.76529385288         : "Full Moon",
-            14.76529385288...21.14794077932         : "Waning Gibbous",
-            21.14794077932...23.14794077932         : "Last Quarter",
-            23.14794077932...28.53058770576         : "Waning Crescent",
-            28.53058770576...29.53058770576         : "New Moon"
-        ]
-
-        return ageInDays.first { phaseRange, phaseName in
-            phaseRange.contains(age)
-        }!.value
-    }
+    //MARK: - Date for next Full Moon
     
 }
