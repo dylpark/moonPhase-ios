@@ -13,48 +13,36 @@ struct MoonTool {
     func getMoonPhase(userSelectedDate: Date) -> String {
         
         let moon = Moon(at: userSelectedDate)
+        let age: Double = moon.age
+        var phase: MoonPhase
         
-        var currentPhase: String {
-            switch moon.age {
-            case 0...1:
-                return MoonPhase.NEW_MOON.rawValue
-                
-            case 1...6.38264692644:
-                return MoonPhase.WAXING_CRESCENT.rawValue
-                
-            case 6.38264692644...8.38264692644:
-                return MoonPhase.FIRST_QUARTER.rawValue
-                
-            case 8.38264692644...13.76529385288:
-                return MoonPhase.WAXING_GIBBOUS.rawValue
-                
-            case 13.76529385288...15.76529385288:
-                return MoonPhase.FULL_MOON.rawValue
-                
-            case 15.76529385288...21.14794077932:
-                return MoonPhase.WANING_GIBBOUS.rawValue
-                
-            case 21.14794077932...23.14794077932:
-                return MoonPhase.LAST_QUARTER.rawValue
-                
-            case 23.14794077932...28.53058770576:
-                return MoonPhase.WANING_CRESCENT.rawValue
-                
-            case 28.53058770576...29.53058868:
-                return MoonPhase.NEW_MOON.rawValue
-                
-            default:
-                return "Error"
-            }
+        if (age < 1.84566) {
+            phase = .newMoon
+        } else if (age < 5.53699) {
+            phase = .waxingCrescent
+        } else if (age < 9.22831) {
+            phase = .firstQuarter
+        } else if (age < 12.91963) {
+            phase = .waxingGibbous
+        } else if (age < 16.61096) {
+            phase = .fullMoon
+        } else if (age < 20.30228) {
+            phase = .waningGibbous
+        } else if (age < 23.99361) {
+            phase = .lastQuarter
+        } else if (age < 27.68493) {
+            phase = .waningCrescent
+        } else {
+            phase = .newMoon
         }
-        return currentPhase
+        return phase.rawValue
     }
     
     func getMoonIllumination(userSelectedDate: Date) -> String {
         
         let moon = Moon(at: userSelectedDate)
         let illumination = moon.illuminated
-        let moonIllumination = "\(String(format: "%.0f", illumination))%"
+        let moonIllumination = "\(String(format: "%.1f", illumination))%"
         
         return moonIllumination
     }

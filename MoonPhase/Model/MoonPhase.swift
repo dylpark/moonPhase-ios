@@ -8,12 +8,12 @@
 import Foundation
 
 public enum MoonPhase: String {
-    case NEW_MOON = "New Moon"
-    case WAXING_CRESCENT = "Waxing Crescent"
-    case FIRST_QUARTER = "First Quarter"
-    case WAXING_GIBBOUS = "Waxing Gibbous"
-    case FULL_MOON = "Full Moon"
-    case WANING_GIBBOUS = "Waning Gibbous"
-    case LAST_QUARTER = "Last Quarter"
-    case WANING_CRESCENT = "Waning Crescent"
+    case newMoon = "New Moon"
+    case waxingCrescent = "Waxing Crescent"
+    case firstQuarter = "First Quarter"
+    case waxingGibbous = "Waxing Gibbous"
+    case fullMoon = "Full Moon"
+    case waningGibbous = "Waning Gibbous"
+    case lastQuarter = "Last Quarter"
+    case waningCrescent = "Waning Crescent"
 }

@@ -9,7 +9,6 @@ import UIKit
 import CoreLocation
 import MapKit
 import GooglePlaces
-import MoonTool
 
 class ViewController: UIViewController {
     
@@ -35,7 +34,6 @@ class ViewController: UIViewController {
     var userSelectedDate = Date()
     let dateFormatter = DateFormatter()
     let requestedDateFormatter = DateFormatter()
-
     
     override func viewDidLoad() {
         
@@ -68,6 +66,7 @@ extension ViewController: MoonManagerDelegate {
             
 //            self.phaseLabel.text = moon.moonPhase.rawValue
                 self.phaseLabel.text = self.moonTool.getMoonPhase(userSelectedDate: self.userSelectedDate)
+//            self.phaseLabel.text = self.moonTool.getPhase(userSelectedDate: self.userSelectedDate)
             
 //            self.moonIlluminationLabel.text = "\(moon.moonIllumination)%"
                 self.moonIlluminationLabel.text = self.moonTool.getMoonIllumination(userSelectedDate: self.userSelectedDate)

@@ -22,21 +22,21 @@ struct MoonModel {
     
     var moonPhaseImage: UIImage {
         switch moonPhase {
-        case .NEW_MOON:
+        case .newMoon:
             return #imageLiteral(resourceName: "New Moon")
-        case .WAXING_CRESCENT:
+        case .waxingCrescent:
             return #imageLiteral(resourceName: "Waxing Crescent")
-        case .FIRST_QUARTER:
+        case .firstQuarter:
             return #imageLiteral(resourceName: "First Quarter")
-        case .WAXING_GIBBOUS:
+        case .waxingGibbous:
             return #imageLiteral(resourceName: "Waxing Gibbous")
-        case .FULL_MOON:
+        case .fullMoon:
             return #imageLiteral(resourceName: "Full Moon")
-        case .WANING_GIBBOUS:
+        case .waningGibbous:
             return #imageLiteral(resourceName: "Waning Gibbous")
-        case .LAST_QUARTER:
+        case .lastQuarter:
             return #imageLiteral(resourceName: "Last Quarter")
-        case .WANING_CRESCENT:
+        case .waningCrescent:
             return #imageLiteral(resourceName: "Waning Crescent")
         }
     }
