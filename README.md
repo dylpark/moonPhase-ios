@@ -8,6 +8,6 @@ Moon Phase is a minimalist, open-source application that allows you to stay in t
 - You can allow the app to use your current location or search for a location manually. 
 - Built for the latest iPhone, iPad models, or Mac with macOS 11.0 or later and a Mac with Apple M1 chip. 
 
-For Privacy Policy/T&Cs -> https://www.dylpark.com/moon-phase-ios
+Privacy Policy/T&Cs -> https://www.dylpark.com/moon-phase-ios
 
 App Store -> https://apps.apple.com/us/app/moon-phase/id1575160115
