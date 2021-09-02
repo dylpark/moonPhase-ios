@@ -19,37 +19,46 @@ struct MoonToolModel {
         let age: Double = moon.age
         var currentPhase: MoonPhase
         
-//        let ageInDays = [
-//            0...1                                   : "New Moon",
-//            1...6.38264692644                       : "Waxing Crescent",
-//            6.38264692644...8.38264692644           : "First Quarter",
-//            8.38264692644...13.76529385288          : "Waxing Gibbous",
-//            13.76529385288...15.76529385288         : "Full Moon",
-//            14.76529385288...21.14794077932         : "Waning Gibbous",
-//            21.14794077932...23.14794077932         : "Last Quarter",
-//            23.14794077932...28.53058770576         : "Waning Crescent",
-//            28.53058770576...29.53058770576         : "New Moon"
-//        ]
+            switch age {
+            case 0...0.5:
+                currentPhase = .newMoon
+            case 0.5...6.38264692644:
+                currentPhase = .waxingCrescent
+            case 6.38264692644...9.22831:
+                currentPhase = .firstQuarter
+            case 9.22831...13.76529385288:
+                currentPhase = .waxingGibbous
+            case 13.76529385288...15.76529385288:
+                currentPhase = .fullMoon
+            case 15.76529385288...20.30228:
+                currentPhase = .waningGibbous
+            case 20.30228...23.99361:
+                currentPhase = .lastQuarter
+            case 23.99361...29.53058868:
+                currentPhase = .waningCrescent
+            default:
+                currentPhase = .newMoon
+            }
         
-        if (age < 1.84566) {
-            currentPhase = .newMoon
-        } else if (age < 5.53699) {
-            currentPhase = .waxingCrescent
-        } else if (age < 9.22831) {
-            currentPhase = .firstQuarter
-        } else if (age < 12.91963) {
-            currentPhase = .waxingGibbous
-        } else if (age < 16.61096) {
-            currentPhase = .fullMoon
-        } else if (age < 20.30228) {
-            currentPhase = .waningGibbous
-        } else if (age < 23.99361) {
-            currentPhase = .lastQuarter
-        } else if (age < 27.68493) {
-            currentPhase = .waningCrescent
-        } else {
-            currentPhase = .newMoon
-        }
+//        if (age < 1.84566) {
+//            currentPhase = .newMoon
+//        } else if (age < 5.53699) {
+//            currentPhase = .waxingCrescent
+//        } else if (age < 9.22831) {
+//            currentPhase = .firstQuarter
+//        } else if (age < 12.91963) {
+//            currentPhase = .waxingGibbous
+//        } else if (age < 16.61096) {
+//            currentPhase = .fullMoon
+//        } else if (age < 20.30228) {
+//            currentPhase = .waningGibbous
+//        } else if (age < 23.99361) {
+//            currentPhase = .lastQuarter
+//        } else if (age < 27.68493) {
+//            currentPhase = .waningCrescent
+//        } else {
+//            currentPhase = .newMoon
+//        }
         
         print(moon.cycleIndex)
         return currentPhase.rawValue
@@ -114,7 +123,7 @@ struct MoonToolModel {
         
         let moon = Moon(at: userSelectedDate)
         let illumination = moon.illuminated
-        let moonIllumination = "\(String(Int(round(illumination))))%"
+        let moonIllumination = "\(String(format: "%.1f", illumination))%"
         
         return moonIllumination
     }
