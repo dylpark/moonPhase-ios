@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import GooglePlaces
+import MoonTool
 
 class ViewController: UIViewController {
     
@@ -42,12 +43,21 @@ class ViewController: UIViewController {
         moonManager.delegate = self
         locationManager.delegate = self
         
-        dateFormatter.dateFormat = "EEE, d MMM"
+//        dateFormatter.dateFormat = "EEE, d MMM"
+        
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+//        dateFormatter.timeZone = TimeZone(abbreviation: "PDT")
+        dateFormatter.timeZone = TimeZone.current
+        print(dateFormatter.timeZone!)
+        
         dateLabel.text = dateFormatter.string(from: userSelectedDate)
 
         initialiseLocationServices()
         initialLocationAuthCheck()
-        
+    
+        let moon = Moon(at: userSelectedDate)
+        let age: Double = moon.age
+        newMoonCounterLabel.text = "\(String(format: "%.3f", age)) days"
         
     }
     
@@ -57,6 +67,7 @@ class ViewController: UIViewController {
 extension ViewController: MoonManagerDelegate {
     
     func didUpdateMoon(_ moonManager: MoonManager, moon: MoonModel) {
+
         DispatchQueue.main.async {
             
             self.sunriseLabel.text = moon.sunriseTime
