@@ -17,37 +17,39 @@ struct MoonToolModel {
         
         let moon = Moon(at: userSelectedDate)
         var currentPhase: MoonPhase
+        let age: Double = moon.age
+        let illuminated = moon.illuminated
         
-        let moonPhase = (moon.age,
-                         moon.illuminated)
+        let moonPhase = (age, illuminated)
         
         switch moonPhase {
-        case (0...1.84566, 0.0...1.0):
+        case ( 0...1.84566, 0.0...1.0):
             currentPhase = .newMoon
 
-        case (1.0...9.22831, 1.0...40.0):
+        case (1.0...9.22831, 1.0...50.0):
             currentPhase = .waxingCrescent
 
-        case (5.53699...9.22831, 40.0...55.0):
+        case (5.53699...9.22831, 45.0...60.0):
             currentPhase = .firstQuarter
 
-        case (9.22831...12.91963, 55.0...99.5):
+        case (5.53699...15.0, 50.0...99.8):
             currentPhase = .waxingGibbous
 
-        case (12.91963...16.61096, 99.5...100.0):
+        case (12.91963...15.61096, 99.8...100.0):
             currentPhase = .fullMoon
 
-        case (16.61096...20.30228, 55.0...99.0):
+        case (15.61096...23.99361, 50.0...99.8):
             currentPhase = .waningGibbous
 
-        case (20.30228...23.99361, 40.0...55.0):
+        case (20.30228...23.99361, 45.0...60.0):
             currentPhase = .lastQuarter
 
-        case (23.99361...29.53058868, 0.0...40.0):
+        case (20.30228...29.53058868, 0.0...50.0):
             currentPhase = .waningCrescent
-//
+            
 //        case (27.68493...29.53058868, 0.0...1.0):
 //            currentPhase = .newMoon
+        
         default:
             currentPhase = .newMoon
         }
