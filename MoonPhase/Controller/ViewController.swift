@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var moonManager = MoonManager()
-    var phaseManager = PhaseManager()
+    var phaseAgeCalc = PhaseAgeCalc()
     let locationManager = CLLocationManager()
     var locationManagerAuthorizing = false
     var userSelectedDate = Date()
@@ -58,13 +58,13 @@ extension ViewController: MoonManagerDelegate {
             self.sunsetLabel.text = moon.sunsetTime
             self.moonriseLabel.text = moon.moonriseTime
             self.moonsetLabel.text = moon.moonsetTime
-            self.phaseLabel.text = moon.moonPhase.rawValue
+            self.phaseLabel.text = moon.moonPhaseNames.rawValue
             self.moonIlluminationLabel.text = "\(moon.moonIllumination)%"
             self.phaseImageView.image = moon.moonPhaseImage
             self.newMoonCounterLabel.text
-                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "New Moon")))) days")
+                = String("\(Int(ceil(self.phaseAgeCalc.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "New Moon")))) days")
             self.fullMoonCounterLabel.text
-                = String("\(Int(ceil(self.phaseManager.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "Full Moon")))) days")
+                = String("\(Int(ceil(self.phaseAgeCalc.getDaysUntilPhase(userSelectedDate: self.userSelectedDate, nextPhase: "Full Moon")))) days")
             
             self.activityIndicator.stopAnimating()
         }
