@@ -223,13 +223,13 @@ extension ViewController: CLLocationManagerDelegate {
             
         } else if UserDefaults.standard.location() == nil {
             
-            let HardCodedLocation = CLLocation(latitude: -33.865143, longitude: 151.209900)
+            let brisbane = CLLocation(latitude: -27.470125, longitude: 153.021072)
             
-            moonManager.fetchMoon(latitude: HardCodedLocation.coordinate.latitude,
-                                  longitude: HardCodedLocation.coordinate.longitude,
+            moonManager.fetchMoon(latitude: brisbane.coordinate.latitude,
+                                  longitude: brisbane.coordinate.longitude,
                                   date: requestedDateFormatter.string(from: userSelectedDate))
             
-            getPlace(for: HardCodedLocation) { placemark in
+            getPlace(for: brisbane) { placemark in
                 guard let placemark = placemark else { return }
                 
                 if placemark.locality != nil {

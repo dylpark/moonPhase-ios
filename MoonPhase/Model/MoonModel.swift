@@ -40,5 +40,4 @@ struct MoonModel {
             return #imageLiteral(resourceName: "Waning Crescent")
         }
     }
-    
 }
