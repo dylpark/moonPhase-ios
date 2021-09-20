@@ -11,7 +11,6 @@
 		FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */; };
 		FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EC2654D4120062B6F6 /* MoonData.swift */; };
 		FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EE2654D4280062B6F6 /* MoonManager.swift */; };
-		FC58A5F226F7FF7400C9BA51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC58A5F126F7FF7400C9BA51 /* ContentView.swift */; };
 		FC58A5F926F81F1200C9BA51 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC58A5F826F81F1200C9BA51 /* WidgetKit.framework */; };
 		FC58A5FB26F81F1200C9BA51 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC58A5FA26F81F1200C9BA51 /* SwiftUI.framework */; };
 		FC58A5FE26F81F1200C9BA51 /* MoonPhaseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC58A5FD26F81F1200C9BA51 /* MoonPhaseWidget.swift */; };
@@ -21,6 +20,14 @@
 		FC58A60726F81F1500C9BA51 /* MoonPhaseWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC58A5F726F81F1200C9BA51 /* MoonPhaseWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC58A60D26F81FBA00C9BA51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC58A5F126F7FF7400C9BA51 /* ContentView.swift */; };
 		FC58A60E26F822CB00C9BA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDBDE64265219EC002E74B8 /* Assets.xcassets */; };
+		FC58A61326F82F1700C9BA51 /* MoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */; };
+		FC58A61426F82F2100C9BA51 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE2BCCF265CE810003309EC /* MoonPhase.swift */; };
+		FC58A61526F82FE100C9BA51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBDE5F265219EB002E74B8 /* ViewController.swift */; };
+		FC58A61626F8300900C9BA51 /* PhaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */; };
+		FC58A61726F8300C00C9BA51 /* MoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EE2654D4280062B6F6 /* MoonManager.swift */; };
+		FC58A61826F8301500C9BA51 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9C54A426982793001FD91F /* ApiKeys.swift */; };
+		FC58A61926F8302B00C9BA51 /* MoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EC2654D4120062B6F6 /* MoonData.swift */; };
+		FC58A61A26F8302E00C9BA51 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD2F4F26A2569200440A75 /* UserDefaults.swift */; };
 		FC5BD15F26900469000D51A7 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BD15E26900469000D51A7 /* AlertViewController.swift */; };
 		FC5BD161269027E4000D51A7 /* ColourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BD160269027E4000D51A7 /* ColourModel.swift */; };
 		FC979E72267310CD00EDB845 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC979E71267310CD00EDB845 /* CalendarViewController.swift */; };
@@ -195,8 +202,8 @@
 				FC5485EA2654D3FD0062B6F6 /* MoonModel.swift */,
 				FCE2BCCF265CE810003309EC /* MoonPhase.swift */,
 				FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */,
-				FCDD2F4F26A2569200440A75 /* UserDefaults.swift */,
 				FC5BD160269027E4000D51A7 /* ColourModel.swift */,
+				FCDD2F4F26A2569200440A75 /* UserDefaults.swift */,
 				FC9C54A426982793001FD91F /* ApiKeys.swift */,
 			);
 			path = Model;
@@ -369,7 +376,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC58A60326F81F1500C9BA51 /* MoonPhaseWidget.intentdefinition in Sources */,
+				FC58A61926F8302B00C9BA51 /* MoonData.swift in Sources */,
+				FC58A61626F8300900C9BA51 /* PhaseManager.swift in Sources */,
+				FC58A61326F82F1700C9BA51 /* MoonModel.swift in Sources */,
 				FC58A5FE26F81F1200C9BA51 /* MoonPhaseWidget.swift in Sources */,
+				FC58A61826F8301500C9BA51 /* ApiKeys.swift in Sources */,
+				FC58A61726F8300C00C9BA51 /* MoonManager.swift in Sources */,
+				FC58A61A26F8302E00C9BA51 /* UserDefaults.swift in Sources */,
+				FC58A61526F82FE100C9BA51 /* ViewController.swift in Sources */,
+				FC58A61426F82F2100C9BA51 /* MoonPhase.swift in Sources */,
 				FC58A60D26F81FBA00C9BA51 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +396,6 @@
 				FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */,
 				FC58A60426F81F1500C9BA51 /* MoonPhaseWidget.intentdefinition in Sources */,
 				FCE2BCD0265CE810003309EC /* MoonPhase.swift in Sources */,
-				FC58A5F226F7FF7400C9BA51 /* ContentView.swift in Sources */,
 				FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */,
 				FC980B20267AF3E300B158B7 /* MapViewController.swift in Sources */,
 				FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */,
@@ -436,6 +450,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dylpark.moonPhase.MoonPhaseWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -461,6 +476,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dylpark.moonPhase.MoonPhaseWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
