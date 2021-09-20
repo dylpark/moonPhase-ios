@@ -17,11 +17,11 @@ struct MoonModel {
     let sunsetTime: String
     let moonriseTime: String
     let moonsetTime: String
-    let moonPhase: MoonPhase
+    let moonPhaseNames: MoonPhaseNames
     let moonIllumination: String
     
     var moonPhaseImage: UIImage {
-        switch moonPhase {
+        switch moonPhaseNames {
         case .NEW_MOON:
             return #imageLiteral(resourceName: "New Moon")
         case .WAXING_CRESCENT:
