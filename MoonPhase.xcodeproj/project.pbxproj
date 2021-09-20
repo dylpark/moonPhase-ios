@@ -12,6 +12,15 @@
 		FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EC2654D4120062B6F6 /* MoonData.swift */; };
 		FC5485EF2654D4280062B6F6 /* MoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5485EE2654D4280062B6F6 /* MoonManager.swift */; };
 		FC58A5F226F7FF7400C9BA51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC58A5F126F7FF7400C9BA51 /* ContentView.swift */; };
+		FC58A5F926F81F1200C9BA51 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC58A5F826F81F1200C9BA51 /* WidgetKit.framework */; };
+		FC58A5FB26F81F1200C9BA51 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC58A5FA26F81F1200C9BA51 /* SwiftUI.framework */; };
+		FC58A5FE26F81F1200C9BA51 /* MoonPhaseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC58A5FD26F81F1200C9BA51 /* MoonPhaseWidget.swift */; };
+		FC58A60126F81F1500C9BA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC58A60026F81F1500C9BA51 /* Assets.xcassets */; };
+		FC58A60326F81F1500C9BA51 /* MoonPhaseWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = FC58A5FF26F81F1200C9BA51 /* MoonPhaseWidget.intentdefinition */; };
+		FC58A60426F81F1500C9BA51 /* MoonPhaseWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = FC58A5FF26F81F1200C9BA51 /* MoonPhaseWidget.intentdefinition */; };
+		FC58A60726F81F1500C9BA51 /* MoonPhaseWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC58A5F726F81F1200C9BA51 /* MoonPhaseWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC58A60D26F81FBA00C9BA51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC58A5F126F7FF7400C9BA51 /* ContentView.swift */; };
+		FC58A60E26F822CB00C9BA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDBDE64265219EC002E74B8 /* Assets.xcassets */; };
 		FC5BD15F26900469000D51A7 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BD15E26900469000D51A7 /* AlertViewController.swift */; };
 		FC5BD161269027E4000D51A7 /* ColourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5BD160269027E4000D51A7 /* ColourModel.swift */; };
 		FC979E72267310CD00EDB845 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC979E71267310CD00EDB845 /* CalendarViewController.swift */; };
@@ -29,6 +38,30 @@
 		FCFC76CD26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC76CC26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FC58A60526F81F1500C9BA51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCDBDE50265219EB002E74B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC58A5F626F81F1200C9BA51;
+			remoteInfo = MoonPhaseWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC58A60926F81F1500C9BA51 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FC58A60726F81F1500C9BA51 /* MoonPhaseWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonPhase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonPhase.debug.xcconfig"; path = "Target Support Files/Pods-MoonPhase/Pods-MoonPhase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -38,6 +71,14 @@
 		FC5485EC2654D4120062B6F6 /* MoonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonData.swift; sourceTree = "<group>"; };
 		FC5485EE2654D4280062B6F6 /* MoonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonManager.swift; sourceTree = "<group>"; };
 		FC58A5F126F7FF7400C9BA51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC58A5F726F81F1200C9BA51 /* MoonPhaseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoonPhaseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC58A5F826F81F1200C9BA51 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FC58A5FA26F81F1200C9BA51 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FC58A5FD26F81F1200C9BA51 /* MoonPhaseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseWidget.swift; sourceTree = "<group>"; };
+		FC58A5FF26F81F1200C9BA51 /* MoonPhaseWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = MoonPhaseWidget.intentdefinition; sourceTree = "<group>"; };
+		FC58A60026F81F1500C9BA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC58A60226F81F1500C9BA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC58A60826F81F1500C9BA51 /* MoonPhaseWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoonPhaseWidgetExtension.entitlements; sourceTree = "<group>"; };
 		FC5BD15E26900469000D51A7 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		FC5BD160269027E4000D51A7 /* ColourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourModel.swift; sourceTree = "<group>"; };
 		FC979E71267310CD00EDB845 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +99,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FC58A5F426F81F1200C9BA51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC58A5FB26F81F1200C9BA51 /* SwiftUI.framework in Frameworks */,
+				FC58A5F926F81F1200C9BA51 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCDBDE55265219EB002E74B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,14 +132,29 @@
 			isa = PBXGroup;
 			children = (
 				8777CB0EA3F18BCA77F1A266 /* Pods_MoonPhase.framework */,
+				FC58A5F826F81F1200C9BA51 /* WidgetKit.framework */,
+				FC58A5FA26F81F1200C9BA51 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC58A5FC26F81F1200C9BA51 /* MoonPhaseWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FC58A5FD26F81F1200C9BA51 /* MoonPhaseWidget.swift */,
+				FC58A5FF26F81F1200C9BA51 /* MoonPhaseWidget.intentdefinition */,
+				FC58A60026F81F1500C9BA51 /* Assets.xcassets */,
+				FC58A60226F81F1500C9BA51 /* Info.plist */,
+			);
+			path = MoonPhaseWidget;
 			sourceTree = "<group>";
 		};
 		FCDBDE4F265219EB002E74B8 = {
 			isa = PBXGroup;
 			children = (
+				FC58A60826F81F1500C9BA51 /* MoonPhaseWidgetExtension.entitlements */,
 				FCDBDE5A265219EB002E74B8 /* MoonPhase */,
+				FC58A5FC26F81F1200C9BA51 /* MoonPhaseWidget */,
 				FCDBDE59265219EB002E74B8 /* Products */,
 				ABF584586012A8DE43FE13E0 /* Pods */,
 				B294A8DA416DD3C0CCB3598A /* Frameworks */,
@@ -100,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDBDE58265219EB002E74B8 /* MoonPhase.app */,
+				FC58A5F726F81F1200C9BA51 /* MoonPhaseWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +225,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FC58A5F626F81F1200C9BA51 /* MoonPhaseWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC58A60C26F81F1500C9BA51 /* Build configuration list for PBXNativeTarget "MoonPhaseWidgetExtension" */;
+			buildPhases = (
+				FC58A5F326F81F1200C9BA51 /* Sources */,
+				FC58A5F426F81F1200C9BA51 /* Frameworks */,
+				FC58A5F526F81F1200C9BA51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoonPhaseWidgetExtension;
+			productName = MoonPhaseWidgetExtension;
+			productReference = FC58A5F726F81F1200C9BA51 /* MoonPhaseWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FCDBDE57265219EB002E74B8 /* MoonPhase */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCDBDE6C265219EC002E74B8 /* Build configuration list for PBXNativeTarget "MoonPhase" */;
@@ -168,10 +251,12 @@
 				FCDBDE55265219EB002E74B8 /* Frameworks */,
 				FCDBDE56265219EB002E74B8 /* Resources */,
 				684273C6150A0DFE8BB6CC74 /* [CP] Copy Pods Resources */,
+				FC58A60926F81F1500C9BA51 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC58A60626F81F1500C9BA51 /* PBXTargetDependency */,
 			);
 			name = MoonPhase;
 			productName = "Moon-iOS14";
@@ -187,6 +272,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					FC58A5F626F81F1200C9BA51 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					FCDBDE57265219EB002E74B8 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -206,11 +294,21 @@
 			projectRoot = "";
 			targets = (
 				FCDBDE57265219EB002E74B8 /* MoonPhase */,
+				FC58A5F626F81F1200C9BA51 /* MoonPhaseWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FC58A5F526F81F1200C9BA51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC58A60E26F822CB00C9BA51 /* Assets.xcassets in Resources */,
+				FC58A60126F81F1500C9BA51 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCDBDE56265219EB002E74B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,11 +364,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FC58A5F326F81F1200C9BA51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC58A60326F81F1500C9BA51 /* MoonPhaseWidget.intentdefinition in Sources */,
+				FC58A5FE26F81F1200C9BA51 /* MoonPhaseWidget.swift in Sources */,
+				FC58A60D26F81FBA00C9BA51 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCDBDE54265219EB002E74B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FC5485ED2654D4120062B6F6 /* MoonData.swift in Sources */,
+				FC58A60426F81F1500C9BA51 /* MoonPhaseWidget.intentdefinition in Sources */,
 				FCE2BCD0265CE810003309EC /* MoonPhase.swift in Sources */,
 				FC58A5F226F7FF7400C9BA51 /* ContentView.swift in Sources */,
 				FC5485EB2654D3FD0062B6F6 /* MoonModel.swift in Sources */,
@@ -291,6 +400,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FC58A60626F81F1500C9BA51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC58A5F626F81F1200C9BA51 /* MoonPhaseWidgetExtension */;
+			targetProxy = FC58A60526F81F1500C9BA51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		FCDBDE61265219EB002E74B8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -303,6 +420,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FC58A60A26F81F1500C9BA51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MoonPhaseWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L23P6VGLZ7;
+				INFOPLIST_FILE = MoonPhaseWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylpark.moonPhase.MoonPhaseWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC58A60B26F81F1500C9BA51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MoonPhaseWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L23P6VGLZ7;
+				INFOPLIST_FILE = MoonPhaseWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylpark.moonPhase.MoonPhaseWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FCDBDE6A265219EC002E74B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -423,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1A0BF3275C73C06090CD0A4 /* Pods-MoonPhase.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MoonPhase/MoonPhase.entitlements;
@@ -455,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F10D711200C752199B9EAF9A /* Pods-MoonPhase.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MoonPhase/MoonPhase.entitlements;
@@ -486,6 +655,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FC58A60C26F81F1500C9BA51 /* Build configuration list for PBXNativeTarget "MoonPhaseWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC58A60A26F81F1500C9BA51 /* Debug */,
+				FC58A60B26F81F1500C9BA51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FCDBDE53265219EB002E74B8 /* Build configuration list for PBXProject "MoonPhase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

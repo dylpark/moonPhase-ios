@@ -45,17 +45,6 @@ struct PhaseView: View {
     }
 }
 
-
-//MARK: - MoonPhaseView
-
-//struct PhaseLabelView: View {
-//    var body: some View {
-//        Text("New Moon")
-//            .font(.largeTitle)
-//            .foregroundColor(Color(UIColor(named: "Super Light Grey")!))
-//    }
-//}
-
 // MARK: - Rise and Set Stack
 
 struct RiseAndSetView: View {
