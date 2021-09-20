@@ -71,7 +71,7 @@ struct MoonManager {
                 sunsetTime: sunset,
                 moonriseTime: moonrise,
                 moonsetTime: moonset,
-                moonPhase: MoonPhase(rawValue: moon_phase)!,
+                moonPhaseNames: MoonPhaseNames(rawValue: moon_phase)!,
                 moonIllumination: moon_illumination
             )
             
