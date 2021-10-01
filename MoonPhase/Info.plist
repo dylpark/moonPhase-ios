@@ -32,7 +32,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Moon Phase would like to use your current location to determine local sunrise/set and moonrise/set times. Alternatively, you can deny this request and search for a location within the app.</string>
+	<string>Moon Phase can use your location to determine sunrise/set and moonrise/set times. Alternatively, you can deny this request and search for a location within the app.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
