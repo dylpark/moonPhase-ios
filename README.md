@@ -1,6 +1,6 @@
 # Moon Phase
 
-Moon Phase is a minimalist, open-source moon phase tracker. The perfect app for casual users who are curious about the moon phase on a given day. The app provides you with basic information on the age/phase of the moon as well as moonrise & moonset times, and sunrise & sunset times. 
+Moon Phase is a minimalist, open-source, moon phase tracker. The perfect app for casual users who are curious about the moon phase on a given day. The app provides you with basic information on the age/phase of the moon as well as moonrise & moonset times, and sunrise & sunset times.
 
 - 100% Free, no in-app purchases or advertisements.
 - The home screen shows how many days until the next New or Full Moon.
