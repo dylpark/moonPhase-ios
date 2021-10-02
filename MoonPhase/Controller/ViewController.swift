@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     var userSelectedDate = Date()
     let dateFormatter = DateFormatter()
     let requestedDateFormatter = DateFormatter()
+    let HardCodedLocation = CLLocation(latitude: -27.470125, longitude: 153.021072)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -223,8 +224,6 @@ extension ViewController: CLLocationManagerDelegate {
             }
             
         } else if UserDefaults.standard.location() == nil {
-            
-            let HardCodedLocation = CLLocation(latitude: -33.865143, longitude: 151.209900)
             
             moonManager.fetchMoon(latitude: HardCodedLocation.coordinate.latitude,
                                   longitude: HardCodedLocation.coordinate.longitude,

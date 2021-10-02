@@ -5,6 +5,12 @@
 //  Created by Dylan Park on 23/7/21.
 //  Copyright © 2021 Dylan Park. All rights reserved.
 
+// Google Maps Open Source Licensing.
+
+/* Apache License
+ Version 2.0, January 2004
+https://www.apache.org/licenses/ */
+
 import UIKit
 import MapKit
 import CoreLocation

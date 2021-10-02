@@ -25,7 +25,6 @@
 		FCDD2F5026A2569200440A75 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD2F4F26A2569200440A75 /* UserDefaults.swift */; };
 		FCE2BCD0265CE810003309EC /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE2BCCF265CE810003309EC /* MoonPhase.swift */; };
 		FCF7390A266DDE9C00A1BD2B /* PhaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */; };
-		FCFC76CD26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC76CC26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +51,6 @@
 		FCDD2F4F26A2569200440A75 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FCE2BCCF265CE810003309EC /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
 		FCF73909266DDE9C00A1BD2B /* PhaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseManager.swift; sourceTree = "<group>"; };
-		FCFC76CC26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsSDKOpenSourceLicenseInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +112,6 @@
 				FCDBDE64265219EC002E74B8 /* Assets.xcassets */,
 				FCD902DA26AA86DD00BC378D /* ApiKeys.plist */,
 				FCDBDE69265219EC002E74B8 /* Info.plist */,
-				FCFC76CC26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift */,
 			);
 			path = MoonPhase;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 				FC9C54A526982793001FD91F /* ApiKeys.swift in Sources */,
 				FC5BD15F26900469000D51A7 /* AlertViewController.swift in Sources */,
 				FCF7390A266DDE9C00A1BD2B /* PhaseManager.swift in Sources */,
-				FCFC76CD26B7CA0100754B19 /* GoogleMapsSDKOpenSourceLicenseInfo.swift in Sources */,
 				FC979E72267310CD00EDB845 /* CalendarViewController.swift in Sources */,
 				FCDBDE5C265219EB002E74B8 /* AppDelegate.swift in Sources */,
 				FCDD2F5026A2569200440A75 /* UserDefaults.swift in Sources */,
