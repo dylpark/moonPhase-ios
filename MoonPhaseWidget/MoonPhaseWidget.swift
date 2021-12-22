@@ -75,12 +75,12 @@ struct Provider: IntentTimelineProvider {
 
     // Provides an array of timeline entries for the current time and, optionally, any future times to update a widget.
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        let entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+            _ = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
 //            let entry = SimpleEntry(date: <#T##Date#>, configuration: <#T##ConfigurationIntent#>, phaseName: <#T##String#>, sunriseTime: <#T##String#>, sunsetTime: <#T##String#>, moonriseTime: <#T##String#>, moonsetTime: <#T##String#>, moonIllumination: <#T##String#>, moonPhaseImage: <#T##UIImage#>)
 //            entries.append(entry)
         }
@@ -113,23 +113,23 @@ struct MoonPhaseWidget: Widget {
 
 //MARK: - Previews
 
-struct Small_MoonPhaseWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        MoonPhaseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-    }
-}
-
-struct Medium_MoonPhaseWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        MoonPhaseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
-    }
-}
-
-struct Large_MoonPhaseWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        MoonPhaseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemLarge))
-    }
-}
+//struct Small_MoonPhaseWidget_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MoonPhaseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+//            .previewContext(WidgetPreviewContext(family: .systemSmall))
+//    }
+//}
+//
+//struct Medium_MoonPhaseWidget_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MoonPhaseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+//            .previewContext(WidgetPreviewContext(family: .systemMedium))
+//    }
+//}
+//
+//struct Large_MoonPhaseWidget_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MoonPhaseWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+//            .previewContext(WidgetPreviewContext(family: .systemLarge))
+//    }
+//}
