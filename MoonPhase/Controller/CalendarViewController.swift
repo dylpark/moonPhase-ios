@@ -3,7 +3,7 @@
 //  MoonPhase
 //
 //  Created by Dylan Park on 23/7/21.
-//  Copyright © 2021 Dylan Park. All rights reserved.
+//  Copyright © 2022 Dylan Park. All rights reserved.
 
 import UIKit
 
@@ -33,6 +33,10 @@ class CalendarViewController: UIViewController {
         calendarStackView.layer.borderWidth = 1
         calendarStackView.clipsToBounds = true
         calendarStackView.layer.borderColor = colourModel.lightGrey
+    }
+    
+    deinit {
+      print("OS Reclaiming Memory - No Retain Cycle/Leak")
     }
     
     @IBAction func selectedDate(_ sender: Any) {

@@ -3,7 +3,7 @@
 //  MoonPhase
 //
 //  Created by Dylan Park on 23/7/21.
-//  Copyright © 2021 Dylan Park. All rights reserved.
+//  Copyright © 2022 Dylan Park. All rights reserved.
 
 import UIKit
 import CoreLocation
@@ -32,6 +32,10 @@ class AlertViewController: UIViewController {
         masterStackView.layer.borderColor = colourModel.lightGrey
     }
     
+    deinit {
+      print("OS Reclaiming Memory - No Retain Cycle/Leak")
+    }
+      
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "useCurrentLocation" {

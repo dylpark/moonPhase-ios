@@ -3,7 +3,7 @@
 //  MoonPhase
 //
 //  Created by Dylan Park on 23/7/21.
-//  Copyright © 2021 Dylan Park. All rights reserved.
+//  Copyright © 2022 Dylan Park. All rights reserved.
 
 import UIKit
 

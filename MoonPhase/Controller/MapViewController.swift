@@ -3,7 +3,7 @@
 //  MoonPhase
 //
 //  Created by Dylan Park on 23/7/21.
-//  Copyright © 2021 Dylan Park. All rights reserved.
+//  Copyright © 2022 Dylan Park. All rights reserved.
 
 // Google Maps Open Source Licensing.
 
@@ -42,6 +42,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
+    }
+    
+    deinit {
+      print("OS Reclaiming Memory - No Retain Cycle/Leak")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
