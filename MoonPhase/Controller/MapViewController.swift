@@ -114,13 +114,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         definesPresentationContext = true
     }
     
-    func setSearchIconColorTo(color: UIColor)
-        {
+    func setSearchIconColorTo(color: UIColor) {
             let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
             let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
             glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
             glassIconView?.tintColor = color
-        }
+    }
     
 }
 
