@@ -45,7 +45,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     deinit {
-      print("OS Reclaiming Memory - No Retain Cycle/Leak")
+        print("OS Reclaiming Memory - No Retain Cycle/Leak")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,8 +53,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "cancel" {
             UserDefaults.standard.set(location: nil)
             UserDefaults.standard.setLabel(label: nil)
+            self.dismiss(animated: false, completion: nil)
+        } else if segue.identifier == "locationChosen" {
+            self.dismiss(animated: false, completion: nil)
         }
     }
+
     
     //MARK: - View Configuration
     
