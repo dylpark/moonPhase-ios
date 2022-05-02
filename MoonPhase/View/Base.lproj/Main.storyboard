@@ -37,13 +37,13 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ULL-Xl-ZLs">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="cancel" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="sxF-kt-k91"/>
+                                <action selector="cancelLocation:" destination="5oj-WV-4a4" id="OXR-vY-vMb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="5Zt-uZ-Nlb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="locationChosen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="VG5-NY-9Cy"/>
+                                <action selector="locationChosen:" destination="5oj-WV-4a4" id="Ajd-2f-xYq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -600,7 +600,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VG5-NY-9Cy"/>
+        <segue reference="q7A-kO-a0X"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Moonrise" width="118" height="118"/>
