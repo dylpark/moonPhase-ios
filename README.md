@@ -11,4 +11,3 @@ Moon Phase is a minimalist, open-source, moon phase tracker. The perfect app for
 Privacy Policy/T&Cs --> https://www.dylpark.com/moon-phase-ios
 
 Moon Phase has been temporarily removed from the App Store due to issues with the API provider.
-App Store --> https://apps.apple.com/us/app/moon-phase/id1575160115
